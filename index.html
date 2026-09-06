@@ -56,4 +56,30 @@ footer{background:#151827;color:#fff}.footer{padding:45px 0;display:flex;justify
 </main>
 
 <footer><div class="container footer"><div><div class="logo">GAB <span>Assessoria</span></div><p>Apoiamos e potencializamos seus resultados.</p></div><div class="links"><a href="#servicos">Serviços</a><a href="#pagamento">Pagamento</a><a href="#duvidas">Dúvidas</a></div></div><div class="copy">© 2026 GAB Assessoria. Todos os direitos reservados.</div></footer>
-</body></html>
+</body>
+<section style="text-align:center; padding:30px;">
+  <h2>Gostou da GAB Assessoria?</h2>
+  <p>Deixe seu like 👍</p>
+
+  <button id="likeBtn" onclick="darLike()"
+    style="font-size:18px; padding:12px 24px; border-radius:10px; border:0; cursor:pointer;">
+    👍 Curtir
+  </button>
+
+  <p><strong><span id="contadorLikes">0</span> pessoas curtiram</strong></p>
+</section>
+
+<script>
+  let likes = Number(localStorage.getItem("gabLikes") || 0);
+
+  document.getElementById("contadorLikes").textContent = likes;
+
+  function darLike() {
+    likes++;
+    localStorage.setItem("gabLikes", likes);
+    document.getElementById("contadorLikes").textContent = likes;
+  }
+</script>
+
+</body>
+</html>
