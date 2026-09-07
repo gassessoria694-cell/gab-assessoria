@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>GAB Assessoria</title>
+  <title>GAB Assessoria Acadêmica</title>
 
   <meta
     name="description"
-    content="GAB Assessoria - apoio, orientação, revisão e formatação acadêmica."
+    content="GAB Assessoria Acadêmica - apoio, orientação, revisão e formatação de trabalhos acadêmicos."
   >
 
   <style>
@@ -26,343 +26,64 @@
     }
 
     header {
-      background: linear-gradient(135deg, #5b46db, #7c5cff);
+      background:
+        radial-gradient(circle at 80% 20%, rgba(124,92,255,0.45), transparent 35%),
+        linear-gradient(135deg, #160a33 0%, #35206d 55%, #5b2fb5 100%);
       color: white;
       text-align: center;
-      padding: 55px 20px 45px;
+      padding: 65px 20px 55px;
+      position: relative;
+      overflow: hidden;
     }
 
-    .logo {
-      font-size: 44px;
-      font-weight: 800;
-      letter-spacing: 3px;
+    header::before {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      right: -170px;
+      top: -170px;
+      background: rgba(255,255,255,0.05);
     }
 
-    header h2 {
-      margin-top: 8px;
-      font-size: 21px;
-      font-weight: 500;
-    }
-
-    header p {
-      max-width: 650px;
-      margin: 18px auto 0;
-      font-size: 16px;
-    }
-
-    .container {
-      width: 92%;
+    .hero-content {
+      position: relative;
+      z-index: 1;
       max-width: 900px;
       margin: auto;
     }
 
-    section {
-      padding: 40px 0;
+    .logo {
+      font-size: 64px;
+      font-weight: 900;
+      letter-spacing: 5px;
+      line-height: 1;
     }
 
-    .section-title {
-      text-align: center;
-      font-size: 28px;
-      margin-bottom: 25px;
-      color: #35277d;
+    .hero-subtitle {
+      margin-top: 12px;
+      color: #f7d774;
+      font-size: 19px;
+      font-weight: 800;
+      letter-spacing: 4px;
     }
 
-    .video-box {
-      background: white;
-      padding: 12px;
-      border-radius: 18px;
-      box-shadow: 0 8px 25px rgba(45, 30, 90, 0.12);
-      max-width: 520px;
+    .hero-line {
+      width: 90px;
+      height: 2px;
+      background: #f7d774;
+      margin: 22px auto;
+    }
+
+    header h1 {
+      max-width: 760px;
       margin: auto;
+      font-size: 34px;
+      line-height: 1.2;
+      font-weight: 800;
     }
 
-    video {
-      width: 100%;
-      display: block;
-      border-radius: 12px;
-      background: #111;
-    }
-
-    .services {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 15px;
-    }
-
-    .service {
-      background: white;
-      padding: 22px 15px;
-      border-radius: 15px;
-      text-align: center;
-      font-weight: 700;
-      box-shadow: 0 5px 18px rgba(45, 30, 90, 0.08);
-      border: 1px solid #eee9ff;
-    }
-
-    .service span {
-      display: block;
-      font-size: 28px;
-      margin-bottom: 8px;
-    }
-
-    .contact {
-      background: white;
-      border-radius: 20px;
-      padding: 35px 20px;
-      text-align: center;
-      box-shadow: 0 8px 25px rgba(45, 30, 90, 0.10);
-    }
-
-    .contact p {
-      margin-bottom: 22px;
-      color: #625d70;
-    }
-
-    .whatsapp {
-      display: inline-block;
-      background: #25D366;
-      color: white;
-      text-decoration: none;
-      padding: 15px 28px;
-      border-radius: 50px;
-      font-size: 17px;
-      font-weight: 700;
-      transition: 0.2s;
-    }
-
-    .whatsapp:hover {
-      transform: scale(1.03);
-    }
-
-    .like-area {
-      text-align: center;
-      margin-top: 28px;
-      padding-top: 25px;
-      border-top: 1px solid #eee;
-    }
-
-    .like-button {
-      border: none;
-      background: #5b46db;
-      color: white;
-      padding: 13px 24px;
-      border-radius: 50px;
-      font-size: 16px;
-      font-weight: 700;
-      cursor: pointer;
-    }
-
-    .like-button:hover {
-      background: #4835b8;
-    }
-
-    #likeMessage {
-      margin-top: 10px;
-      color: #5b46db;
-      font-weight: 600;
-    }
-
-    footer {
-      margin-top: 30px;
-      background: #211c35;
-      color: white;
-      text-align: center;
-      padding: 25px 15px;
-      font-size: 14px;
-    }
-
-    @media (max-width: 700px) {
-      .services {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .logo {
-        font-size: 36px;
-      }
-
-      header h2 {
-        font-size: 18px;
-      }
-    }
-
-    @media (max-width: 430px) {
-      .services {
-        grid-template-columns: 1fr;
-      }
-
-      section {
-        padding: 30px 0;
-      }
-    }
-  </style>
-</head>
-
-<body>
-
-  <header>
-    <div class="logo">GAB</div>
-
-    <h2>ASSESSORIA</h2>
-
-    <p>
-      Apoio e orientação acadêmica para organização,
-      revisão e formatação de trabalhos.
-    </p>
-  </header>
-
-  <main class="container">
-
-    <section>
-      <h2 class="section-title">Conheça a GAB Assessoria</h2>
-
-      <div class="video-box">
-        <video controls playsinline preload="metadata">
-          <source
-            src="WhatsApp Video 2026-09-07 at 15.02.56.mp4"
-            type="video/mp4"
-          >
-
-          Seu navegador não consegue reproduzir este vídeo.
-        </video>
-      </div>
-    </section>
-
-    <section>
-      <h2 class="section-title">Trabalhos oferecidos</h2>
-
-      <div class="services">
-
-        <div class="service">
-          <span>📚</span>
-          TCC
-        </div>
-
-        <div class="service">
-          <span>📋</span>
-          Relatório de Estágio
-        </div>
-
-        <div class="service">
-          <span>📝</span>
-          Projetos
-        </div>
-
-        <div class="service">
-          <span>📖</span>
-          Projeto Integrador
-        </div>
-
-        <div class="service">
-          <span>📊</span>
-          Projetos Multidisciplinares
-        </div>
-
-        <div class="service">
-          <span>🔎</span>
-          Projetos Transdisciplinares
-        </div>
-
-        <div class="service">
-          <span>📄</span>
-          Resenhas
-        </div>
-
-        <div class="service">
-          <span>🎓</span>
-          Práticas de Ensino
-        </div>
-
-        <div class="service">
-          <span>➕</span>
-          Outros trabalhos acadêmicos
-        </div>
-
-      </div>
-    </section>
-
-    <section>
-
-      <div class="contact">
-
-        <h2 class="section-title">
-          Solicite seu orçamento
-        </h2>
-
-        <p>
-          Entre em contato pelo WhatsApp e informe o tipo
-          de trabalho que você precisa de orientação.
-        </p>
-
-        <a
-          class="whatsapp"
-          href="https://wa.me/5551989924617?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          💬 Falar pelo WhatsApp
-        </a>
-
-        <div class="like-area">
-
-          <h3>Já foi atendido pela GAB?</h3>
-
-          <p>
-            Deixe seu like para apoiar nosso trabalho.
-          </p>
-
-          <button
-            class="like-button"
-            onclick="darLike()"
-          >
-            👍 Deixar meu like
-          </button>
-
-          <div id="likeMessage"></div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-  </main>
-
-  <footer>
-    <strong>GAB Assessoria</strong>
-    <br>
-    Apoio e orientação acadêmica
-  </footer>
-
-  <script>
-    function darLike() {
-
-      const mensagem =
-        document.getElementById("likeMessage");
-
-      mensagem.textContent =
-        "❤️ Obrigado pelo seu apoio!";
-
-      localStorage.setItem(
-        "gabLike",
-        "true"
-      );
-    }
-
-    window.onload = function() {
-
-      if (
-        localStorage.getItem("gabLike") === "true"
-      ) {
-
-        document.getElementById(
-          "likeMessage"
-        ).textContent =
-          "❤️ Obrigado pelo seu apoio!";
-
-      }
-
-    };
-  </script>
-
-</body>
-</html>
+    .hero-text {
+      max-width: 650px;
+      margin: 18px auto 25px;
