@@ -8,7 +8,7 @@
 
   <meta
     name="description"
-    content="GAB Assessoria Acadêmica - apoio, orientação, revisão e formatação de trabalhos acadêmicos."
+    content="GAB Assessoria Acadêmica - apoio, orientação, revisão e formatação acadêmica."
   >
 
   <style>
@@ -34,17 +34,6 @@
       padding: 65px 20px 55px;
       position: relative;
       overflow: hidden;
-    }
-
-    header::before {
-      content: "";
-      position: absolute;
-      width: 420px;
-      height: 420px;
-      border-radius: 50%;
-      right: -170px;
-      top: -170px;
-      background: rgba(255,255,255,0.05);
     }
 
     .hero-content {
@@ -81,9 +70,392 @@
       margin: auto;
       font-size: 34px;
       line-height: 1.2;
-      font-weight: 800;
     }
 
     .hero-text {
       max-width: 650px;
       margin: 18px auto 25px;
+      font-size: 18px;
+      color: #f5f1ff;
+    }
+
+    .hero-button,
+    .whatsapp {
+      display: inline-block;
+      text-decoration: none;
+      padding: 15px 28px;
+      border-radius: 50px;
+      font-size: 17px;
+      font-weight: 800;
+    }
+
+    .hero-button {
+      background: linear-gradient(135deg, #ffd66b, #d99b2b);
+      color: #24143e;
+    }
+
+    .hero-highlights {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 35px;
+    }
+
+    .hero-item {
+      padding: 12px 8px;
+      font-size: 14px;
+    }
+
+    .hero-item span {
+      display: block;
+      font-size: 27px;
+      margin-bottom: 7px;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    section {
+      padding: 45px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 25px;
+      color: #35277d;
+    }
+
+    .video-box {
+      background: white;
+      padding: 12px;
+      border-radius: 18px;
+      box-shadow: 0 8px 25px rgba(45,30,90,0.12);
+      max-width: 520px;
+      margin: auto;
+    }
+
+    video {
+      width: 100%;
+      display: block;
+      border-radius: 12px;
+      background: #111;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .service {
+      background: white;
+      padding: 22px 15px;
+      border-radius: 15px;
+      text-align: center;
+      font-weight: 700;
+      box-shadow: 0 5px 18px rgba(45,30,90,0.08);
+      border: 1px solid #eee9ff;
+    }
+
+    .service span {
+      display: block;
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .contact {
+      background: white;
+      border-radius: 20px;
+      padding: 35px 20px;
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(45,30,90,0.10);
+    }
+
+    .contact p {
+      margin-bottom: 22px;
+      color: #625d70;
+    }
+
+    .whatsapp {
+      background: #25D366;
+      color: white;
+    }
+
+    .like-area {
+      text-align: center;
+      margin-top: 28px;
+      padding-top: 25px;
+      border-top: 1px solid #eee;
+    }
+
+    .like-button {
+      border: none;
+      background: #5b46db;
+      color: white;
+      padding: 13px 24px;
+      border-radius: 50px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    #likeMessage {
+      margin-top: 10px;
+      color: #5b46db;
+      font-weight: 600;
+    }
+
+    footer {
+      margin-top: 30px;
+      background: #211c35;
+      color: white;
+      text-align: center;
+      padding: 25px 15px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 700px) {
+      .logo {
+        font-size: 48px;
+      }
+
+      .hero-subtitle {
+        font-size: 15px;
+        letter-spacing: 2px;
+      }
+
+      header h1 {
+        font-size: 26px;
+      }
+
+      .hero-highlights {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .services {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 430px) {
+      .services {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 30px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="hero-content">
+
+      <div class="logo">GAB</div>
+
+      <div class="hero-subtitle">
+        ASSESSORIA ACADÊMICA
+      </div>
+
+      <div class="hero-line"></div>
+
+      <h1>
+        Apoio, orientação, revisão e formatação acadêmica
+      </h1>
+
+      <p class="hero-text">
+        Suporte para organização e desenvolvimento dos seus trabalhos acadêmicos.
+      </p>
+
+      <a
+        class="hero-button"
+        href="https://wa.me/5551989924617?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        💬 SOLICITAR ORÇAMENTO
+      </a>
+
+      <div class="hero-highlights">
+
+        <div class="hero-item">
+          <span>📚</span>
+          <strong>Trabalhos acadêmicos</strong>
+        </div>
+
+        <div class="hero-item">
+          <span>📝</span>
+          <strong>Revisão e correção</strong>
+        </div>
+
+        <div class="hero-item">
+          <span>📖</span>
+          <strong>Normas ABNT</strong>
+        </div>
+
+        <div class="hero-item">
+          <span>🎓</span>
+          <strong>Atendimento personalizado</strong>
+        </div>
+
+      </div>
+
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section>
+      <h2 class="section-title">
+        Conheça a GAB Assessoria
+      </h2>
+
+      <div class="video-box">
+        <video controls playsinline preload="metadata">
+          <source
+            src="WhatsApp Video 2026-09-07 at 15.02.56.mp4"
+            type="video/mp4"
+          >
+          Seu navegador não consegue reproduzir este vídeo.
+        </video>
+      </div>
+    </section>
+
+    <section>
+
+      <h2 class="section-title">
+        Serviços de apoio acadêmico
+      </h2>
+
+      <div class="services">
+
+        <div class="service">
+          <span>📚</span>
+          TCC
+        </div>
+
+        <div class="service">
+          <span>📋</span>
+          Relatório de Estágio
+        </div>
+
+        <div class="service">
+          <span>📝</span>
+          Projetos
+        </div>
+
+        <div class="service">
+          <span>📖</span>
+          Projeto Integrador
+        </div>
+
+        <div class="service">
+          <span>📊</span>
+          Projetos Multidisciplinares
+        </div>
+
+        <div class="service">
+          <span>🔎</span>
+          Projetos Transdisciplinares
+        </div>
+
+        <div class="service">
+          <span>📄</span>
+          Resenhas
+        </div>
+
+        <div class="service">
+          <span>🎓</span>
+          Práticas de Ensino
+        </div>
+
+        <div class="service">
+          <span>➕</span>
+          Outros trabalhos acadêmicos
+        </div>
+
+      </div>
+
+    </section>
+
+    <section>
+
+      <div class="contact">
+
+        <h2 class="section-title">
+          Solicite seu orçamento
+        </h2>
+
+        <p>
+          Informe pelo WhatsApp o tipo de trabalho em que você precisa de
+          orientação, revisão ou formatação.
+        </p>
+
+        <a
+          class="whatsapp"
+          href="https://wa.me/5551989924617?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          💬 Falar pelo WhatsApp
+        </a>
+
+        <div class="like-area">
+
+          <h3>
+            Já foi atendido pela GAB?
+          </h3>
+
+          <p>
+            Deixe seu like para apoiar nosso trabalho.
+          </p>
+
+          <button
+            class="like-button"
+            onclick="darLike()"
+          >
+            👍 Deixar meu like
+          </button>
+
+          <div id="likeMessage"></div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <strong>GAB Assessoria</strong>
+    <br>
+    Apoio e orientação acadêmica
+  </footer>
+
+  <script>
+    function darLike() {
+      const mensagem = document.getElementById("likeMessage");
+
+      mensagem.textContent = "❤️ Obrigado pelo seu apoio!";
+
+      localStorage.setItem("gabLike", "true");
+    }
+
+    window.onload = function() {
+      if (localStorage.getItem("gabLike") === "true") {
+        document.getElementById("likeMessage").textContent =
+          "❤️ Obrigado pelo seu apoio!";
+      }
+    };
+  </script>
+
+</body>
+</html>
