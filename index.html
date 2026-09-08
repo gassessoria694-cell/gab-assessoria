@@ -1,555 +1,1294 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>GAB Assessoria Acadêmica</title>
+<meta charset="UTF-8">
 
-  <meta name="description"
-        content="GAB Assessoria Acadêmica - apoio, orientação, revisão e formatação acadêmica.">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<title>GAB Assessoria Acadêmica</title>
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f7f7f5;
-      color: #171717;
-      line-height: 1.6;
-    }
+<meta name="description"
+content="GAB Assessoria Acadêmica - apoio, orientação, revisão e formatação acadêmica.">
 
-    .container {
-      width: 100%;
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
+<style>
 
-    header {
-      padding: 24px 0 10px;
-    }
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
 
-    .tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: #e8f0eb;
-      color: #315d48;
-      padding: 9px 17px;
-      border-radius: 30px;
-      font-weight: 600;
-      font-size: 15px;
-    }
+html{
+scroll-behavior:smooth;
+}
 
-    .hero {
-      position: relative;
-      min-height: 500px;
-      margin-top: 10px;
-      border-radius: 28px;
-      overflow: hidden;
-      background:
-        linear-gradient(rgba(255,255,255,.58), rgba(255,255,255,.68)),
-        url("https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=1200&q=80")
-        center/cover;
-      display: flex;
-      align-items: center;
-    }
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:#f7f7f5;
+color:#172017;
+line-height:1.6;
+}
 
-    .hero-content {
-      padding: 45px 30px;
-      max-width: 680px;
-    }
+a{
+text-decoration:none;
+color:inherit;
+}
 
-    .hero h1 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(48px, 10vw, 82px);
-      line-height: .98;
-      letter-spacing: -3px;
-      margin-bottom: 30px;
-    }
+.container{
+width:min(1100px,92%);
+margin:auto;
+}
 
-    .hero p {
-      font-size: 21px;
-      max-width: 610px;
-      line-height: 1.55;
-    }
+/* CABEÇALHO */
 
-    section {
-      padding: 55px 0 20px;
-    }
+header{
+padding:22px 0;
+background:#fff;
+border-bottom:1px solid #e8e8e4;
+}
 
-    .section-title {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 48px;
-      margin-bottom: 6px;
-    }
+.header-content{
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:20px;
+}
 
-    .section-subtitle {
-      color: #707070;
-      font-size: 18px;
-      margin-bottom: 25px;
-    }
+.brand{
+font-weight:800;
+color:#315d48;
+font-size:18px;
+}
 
-    .service {
-      width: 100%;
-      border: 1px solid #e2e2df;
-      background: white;
-      border-radius: 22px;
-      padding: 22px;
-      margin-bottom: 15px;
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      cursor: pointer;
-      text-align: left;
-      transition: .2s;
-    }
+.tag{
+font-size:14px;
+color:#607064;
+}
 
-    .service:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(0,0,0,.08);
-    }
+/* HERO */
 
-    .service-icon {
-      min-width: 72px;
-      width: 72px;
-      height: 72px;
-      border-radius: 20px;
-      background: #e8f0eb;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 32px;
-    }
+.hero{
+min-height:520px;
+display:grid;
+grid-template-columns:1.1fr .9fr;
+align-items:center;
+gap:50px;
+padding:70px 0;
+}
 
-    .service-info {
-      flex: 1;
-    }
+.hero h1{
+font-size:clamp(40px,6vw,68px);
+line-height:1.02;
+color:#315d48;
+margin-bottom:22px;
+}
 
-    .service h3 {
-      font-size: 24px;
-      margin-bottom: 2px;
-    }
+.hero h1 span{
+display:block;
+color:#172017;
+}
 
-    .service p {
-      color: #707070;
-      font-size: 16px;
-    }
+.hero p{
+max-width:650px;
+font-size:18px;
+color:#5f685f;
+margin-bottom:28px;
+}
 
-    .arrow {
-      font-size: 32px;
-      color: #777;
-    }
+.btn{
+display:inline-block;
+border:0;
+border-radius:12px;
+padding:14px 22px;
+background:#315d48;
+color:#fff;
+font-weight:700;
+cursor:pointer;
+transition:.2s;
+}
 
-    .about {
-      background: #e8f0eb;
-      border-radius: 25px;
-      padding: 30px;
-      margin-top: 40px;
-    }
+.btn:hover{
+transform:translateY(-2px);
+opacity:.93;
+}
 
-    .about h2 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 36px;
-      margin-bottom: 12px;
-    }
+.hero-card{
+background:#fff;
+border:1px solid #e3e5e0;
+border-radius:28px;
+padding:35px;
+box-shadow:0 15px 40px rgba(0,0,0,.07);
+}
 
-    .about p {
-      color: #444;
-      font-size: 17px;
-    }
+.hero-card h3{
+color:#315d48;
+margin-bottom:12px;
+font-size:24px;
+}
 
-    footer {
-      text-align: center;
-      padding: 50px 20px 100px;
-      color: #777;
-    }
+.hero-card p{
+font-size:15px;
+margin-bottom:20px;
+}
 
-    .whatsapp {
-      position: fixed;
-      right: 24px;
-      bottom: 22px;
-      z-index: 20;
-      background: #25D366;
-      color: white;
-      text-decoration: none;
-      padding: 16px 25px;
-      border-radius: 40px;
-      font-weight: bold;
-      font-size: 17px;
-      box-shadow: 0 7px 25px rgba(0,0,0,.2);
-    }
+.check-list{
+list-style:none;
+display:grid;
+gap:12px;
+}
 
-    .modal {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,.55);
-      z-index: 50;
-      padding: 20px;
-      overflow-y: auto;
-    }
+.check-list li:before{
+content:"✓";
+color:#315d48;
+font-weight:800;
+margin-right:9px;
+}
 
-    .modal-box {
-      width: 100%;
-      max-width: 520px;
-      background: white;
-      margin: 50px auto;
-      border-radius: 25px;
-      padding: 28px;
-      position: relative;
-    }
+/* SEÇÕES */
 
-    .close {
-      position: absolute;
-      right: 18px;
-      top: 12px;
-      border: none;
-      background: none;
-      font-size: 30px;
-      cursor: pointer;
-      color: #777;
-    }
+section{
+padding:65px 0;
+}
 
-    .modal h2 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 32px;
-      margin-bottom: 5px;
-      padding-right: 30px;
-    }
+.section-title{
+text-align:center;
+color:#315d48;
+font-size:32px;
+margin-bottom:10px;
+}
 
-    .modal-subtitle {
-      color: #777;
-      margin-bottom: 22px;
-    }
+.section-subtitle{
+text-align:center;
+color:#6b726b;
+max-width:700px;
+margin:0 auto 32px;
+}
 
-    label {
-      display: block;
-      font-weight: bold;
-      margin: 14px 0 6px;
-    }
+/* SERVIÇOS */
 
-    input,
-    textarea,
-    select {
-      width: 100%;
-      border: 1px solid #ddd;
-      border-radius: 12px;
-      padding: 13px;
-      font-size: 16px;
-      font-family: inherit;
-      outline: none;
-    }
+.services-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
+}
 
-    textarea {
-      min-height: 110px;
-      resize: vertical;
-    }
+.service{
+background:#fff;
+border:1px solid #e3e5e0;
+border-radius:20px;
+padding:25px;
+cursor:pointer;
+transition:.2s;
+box-shadow:0 8px 24px rgba(0,0,0,.04);
+}
 
-    .send {
-      width: 100%;
-      border: none;
-      border-radius: 14px;
-      background: #315d48;
-      color: white;
-      padding: 15px;
-      font-size: 17px;
-      font-weight: bold;
-      margin-top: 20px;
-      cursor: pointer;
-    }
+.service:hover{
+transform:translateY(-4px);
+border-color:#315d48;
+}
 
-    @media (max-width: 600px) {
-      .container {
-        padding: 0 15px;
-      }
+.service h3{
+color:#315d48;
+font-size:20px;
+margin-bottom:8px;
+}
 
-      .hero {
-        min-height: 470px;
-        border-radius: 22px;
-      }
+.service p{
+color:#687168;
+font-size:14px;
+}
 
-      .hero-content {
-        padding: 35px 22px;
-      }
+/* AJUDA */
 
-      .hero h1 {
-        font-size: 54px;
-      }
+.help{
+background:#eef2ed;
+}
 
-      .hero p {
-        font-size: 18px;
-      }
+.help-box{
+max-width:850px;
+margin:auto;
+background:#fff;
+border-radius:24px;
+padding:35px;
+border:1px solid #e0e5df;
+}
 
-      .section-title {
-        font-size: 42px;
-      }
+.help-box p{
+color:#626b63;
+margin-bottom:12px;
+}
 
-      .service {
-        padding: 17px;
-      }
+/* TRABALHOS */
 
-      .service-icon {
-        min-width: 58px;
-        width: 58px;
-        height: 58px;
-        font-size: 25px;
-      }
+.portfolio{
+padding:70px 0 55px;
+}
 
-      .service h3 {
-        font-size: 20px;
-      }
+.portfolio-slider{
+position:relative;
+width:100%;
+max-width:760px;
+margin:28px auto 0;
+display:flex;
+align-items:center;
+justify-content:center;
+}
 
-      .service p {
-        font-size: 14px;
-      }
+.portfolio-card{
+width:100%;
+background:#fff;
+border:1px solid #e2e2df;
+border-radius:22px;
+padding:10px;
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+overflow:hidden;
+}
 
-      .whatsapp {
-        right: 15px;
-        bottom: 15px;
-        padding: 14px 20px;
-      }
-    }
-  </style>
+.portfolio-card img{
+display:block;
+width:100%;
+height:430px;
+object-fit:contain;
+border-radius:16px;
+background:#f2f3f0;
+}
+
+.portfolio-arrow{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+z-index:5;
+
+width:48px;
+height:48px;
+
+border:0;
+border-radius:50%;
+
+background:#fff;
+color:#315d48;
+
+font-size:38px;
+line-height:40px;
+
+cursor:pointer;
+
+box-shadow:0 5px 18px rgba(0,0,0,.18);
+}
+
+.portfolio-prev{
+left:8px;
+}
+
+.portfolio-next{
+right:8px;
+}
+
+.portfolio-dots{
+display:flex;
+justify-content:center;
+gap:8px;
+margin-top:18px;
+}
+
+.portfolio-dot{
+width:10px;
+height:10px;
+border-radius:50%;
+background:#d0d0d0;
+cursor:pointer;
+}
+
+.portfolio-dot.active{
+background:#315d48;
+}
+
+/* CHAMADA */
+
+.cta{
+text-align:center;
+background:#315d48;
+color:#fff;
+border-radius:28px;
+padding:45px 25px;
+margin:20px auto 70px;
+}
+
+.cta h2{
+font-size:30px;
+margin-bottom:10px;
+}
+
+.cta p{
+margin-bottom:22px;
+opacity:.92;
+}
+
+.btn-light{
+background:#fff;
+color:#315d48;
+}
+
+/* RODAPÉ */
+
+footer{
+text-align:center;
+padding:25px 15px;
+background:#fff;
+border-top:1px solid #e5e5e1;
+color:#6c736c;
+font-size:14px;
+}
+
+/* WHATSAPP */
+
+.whatsapp{
+position:fixed;
+right:15px;
+bottom:15px;
+z-index:50;
+
+background:#315d48;
+color:#fff;
+
+padding:14px 20px;
+
+border-radius:999px;
+
+font-weight:700;
+
+box-shadow:0 8px 25px rgba(0,0,0,.2);
+}
+
+/* FORMULÁRIO */
+
+.modal{
+display:none;
+
+position:fixed;
+inset:0;
+
+z-index:100;
+
+background:rgba(0,0,0,.55);
+
+padding:20px;
+
+align-items:center;
+justify-content:center;
+}
+
+.modal.show{
+display:flex;
+}
+
+.modal-box{
+width:min(560px,100%);
+
+max-height:90vh;
+
+overflow:auto;
+
+background:#fff;
+
+border-radius:24px;
+
+padding:30px;
+
+position:relative;
+}
+
+.close{
+position:absolute;
+
+right:15px;
+top:10px;
+
+border:0;
+
+background:transparent;
+
+font-size:30px;
+
+cursor:pointer;
+
+color:#5d665e;
+}
+
+.modal-box h2{
+color:#315d48;
+margin-bottom:7px;
+}
+
+.modal-subtitle{
+color:#687168;
+font-size:14px;
+margin-bottom:22px;
+}
+
+label{
+display:block;
+
+font-weight:700;
+
+margin:13px 0 6px;
+
+font-size:14px;
+}
+
+input,
+select,
+textarea{
+width:100%;
+
+border:1px solid #d8ddd7;
+
+border-radius:11px;
+
+padding:12px;
+
+font:inherit;
+
+outline:none;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+border-color:#315d48;
+}
+
+textarea{
+min-height:110px;
+resize:vertical;
+}
+
+.submit{
+width:100%;
+margin-top:20px;
+}
+
+/* CELULAR */
+
+@media(max-width:800px){
+
+.hero{
+grid-template-columns:1fr;
+padding:50px 0;
+}
+
+.services-grid{
+grid-template-columns:1fr 1fr;
+}
+
+}
+
+@media(max-width:560px){
+
+.header-content{
+flex-direction:column;
+align-items:flex-start;
+}
+
+.services-grid{
+grid-template-columns:1fr;
+}
+
+.hero-card{
+padding:25px;
+}
+
+.portfolio-card img{
+height:350px;
+}
+
+.portfolio-arrow{
+width:42px;
+height:42px;
+font-size:32px;
+}
+
+}
+
+</style>
+
 </head>
+
 
 <body>
 
-  <div class="container">
 
-    <header>
-      <div class="tag">
-        🌿 Assessoria acadêmica
-      </div>
-    </header>
-
-    <main>
-
-      <div class="hero">
-        <div class="hero-content">
-          <h1>
-            GAB<br>
-            Assessoria<br>
-            Acadêmica
-          </h1>
-
-          <p>
-            Apoio profissional para você concluir seus trabalhos
-            com tranquilidade e excelência.
-          </p>
-        </div>
-      </div>
-
-      <section>
-        <h2 class="section-title">Serviços</h2>
-
-        <p class="section-subtitle">
-          Toque em um serviço para solicitar um orçamento
-        </p>
-
-        <button class="service" onclick="abrirFormulario('TCC')">
-          <div class="service-icon">🎓</div>
-          <div class="service-info">
-            <h3>TCC</h3>
-            <p>Orientação, revisão e formatação</p>
-          </div>
-          <div class="arrow">›</div>
-        </button>
-
-        <button class="service" onclick="abrirFormulario('Projetos Multidisciplinares')">
-          <div class="service-icon">📚</div>
-          <div class="service-info">
-            <h3>Projetos Multidisciplinares</h3>
-            <p>Apoio na organização e desenvolvimento</p>
-          </div>
-          <div class="arrow">›</div>
-        </button>
-
-        <button class="service" onclick="abrirFormulario('Relatórios de Estágio')">
-          <div class="service-icon">📋</div>
-          <div class="service-info">
-            <h3>Relatórios de Estágio</h3>
-            <p>Revisão, organização e formatação</p>
-          </div>
-          <div class="arrow">›</div>
-        </button>
-
-        <button class="service" onclick="abrirFormulario('Trabalhos Acadêmicos')">
-          <div class="service-icon">📝</div>
-          <div class="service-info">
-            <h3>Trabalhos Acadêmicos</h3>
-            <p>Revisão, formatação e orientação</p>
-          </div>
-          <div class="arrow">›</div>
-        </button>
-
-        <button class="service" onclick="abrirFormulario('Outros Serviços')">
-          <div class="service-icon">✨</div>
-          <div class="service-info">
-            <h3>Outros Serviços</h3>
-            <p>Consulte nossos serviços disponíveis</p>
-          </div>
-          <div class="arrow">›</div>
-        </button>
-
-        <div class="about">
-          <h2>Como podemos ajudar</h2>
-          <p>
-            Oferecemos apoio acadêmico, orientação, revisão e
-            formatação para ajudar você a organizar seus trabalhos
-            e acompanhar suas atividades com mais tranquilidade.
-          </p>
-        </div>
-      </section>
-
-    </main>
-
-  </div>
-
-  <footer>
-    © 2026 GAB Assessoria Acadêmica
-  </footer>
-
-  <!-- BOTÃO WHATSAPP -->
-  <a
-    class="whatsapp"
-    href="https://wa.me/5551989924617"
-    target="_blank"
-    rel="noopener">
-    💬 WhatsApp
-  </a>
+<div class="container">
 
 
-  <!-- FORMULÁRIO -->
-  <div class="modal" id="modal">
+<header>
 
-    <div class="modal-box">
+<div class="header-content">
 
-      <button class="close" onclick="fecharFormulario()">×</button>
+<div class="brand">
+GAB Assessoria Acadêmica
+</div>
 
-      <h2>Solicitar orçamento</h2>
+<div class="tag">
+Apoio e orientação acadêmica
+</div>
 
-      <p class="modal-subtitle">
-        Preencha os dados abaixo e envie sua solicitação pelo WhatsApp.
-      </p>
+</div>
 
-      <form id="formulario">
-
-        <label for="servico">Serviço</label>
-
-        <input
-          type="text"
-          id="servico"
-          readonly>
-
-        <label for="nome">Seu nome</label>
-
-        <input
-          type="text"
-          id="nome"
-          placeholder="Digite seu nome"
-          required>
-
-        <label for="faculdade">Faculdade</label>
-
-        <input
-          type="text"
-          id="faculdade"
-          placeholder="Digite sua faculdade"
-          required>
-
-        <label for="telefone">Seu WhatsApp</label>
-
-        <input
-          type="tel"
-          id="telefone"
-          placeholder="(00) 00000-0000"
-          required>
-
-        <label for="mensagem">Mensagem</label>
-
-        <textarea
-          id="mensagem"
-          placeholder="Explique brevemente o que você precisa"></textarea>
-
-        <button class="send" type="submit">
-          Enviar solicitação pelo WhatsApp
-        </button>
-
-      </form>
-
-    </div>
-
-  </div>
+</header>
 
 
-  <script>
-
-    function abrirFormulario(servico) {
-      document.getElementById("servico").value = servico;
-      document.getElementById("modal").style.display = "block";
-      document.body.style.overflow = "hidden";
-    }
-
-    function fecharFormulario() {
-      document.getElementById("modal").style.display = "none";
-      document.body.style.overflow = "auto";
-    }
-
-    window.onclick = function(event) {
-      const modal = document.getElementById("modal");
-
-      if (event.target === modal) {
-        fecharFormulario();
-      }
-    };
+<main>
 
 
-    document.getElementById("formulario").addEventListener("submit", function(event) {
+<!-- INÍCIO -->
 
-      event.preventDefault();
+<section class="hero">
 
-      const servico =
-        document.getElementById("servico").value;
+<div>
 
-      const nome =
-        document.getElementById("nome").value;
+<h1>
 
-      const faculdade =
-        document.getElementById("faculdade").value;
+GAB
 
-      const telefone =
-        document.getElementById("telefone").value;
+<span>
+Assessoria Acadêmica
+</span>
 
-      const mensagem =
-        document.getElementById("mensagem").value;
+</h1>
+
+<p>
+
+Apoio, orientação, revisão e formatação
+para você organizar suas atividades acadêmicas
+com mais tranquilidade.
+
+</p>
+
+<button
+class="btn"
+onclick="abrirFormulario('Atendimento geral')">
+
+Solicitar atendimento
+
+</button>
+
+</div>
 
 
-      const texto =
-        "Olá, GAB Assessoria Acadêmica!%0A%0A" +
-        "Gostaria de solicitar um orçamento.%0A%0A" +
-        "Serviço: " + servico + "%0A" +
-        "Nome: " + nome + "%0A" +
-        "Faculdade: " + faculdade + "%0A" +
-        "Meu WhatsApp: " + telefone + "%0A" +
-        "Mensagem: " + mensagem;
+<div class="hero-card">
+
+<h3>
+Como podemos ajudar
+</h3>
+
+<p>
+
+Conte com orientação para organizar e revisar
+seus materiais acadêmicos de forma clara e responsável.
+
+</p>
+
+<ul class="check-list">
+
+<li>TCC e projetos</li>
+
+<li>Projetos multidisciplinares</li>
+
+<li>Relatórios de estágio</li>
+
+<li>Trabalhos acadêmicos</li>
+
+<li>Revisão e formatação</li>
+
+</ul>
+
+</div>
+
+</section>
 
 
-      const numeroGab = "5551989924617";
+<!-- SERVIÇOS -->
 
-      const link =
-        "https://wa.me/" + numeroGab + "?text=" + texto;
+<section>
 
-      window.open(link, "_blank");
+<h2 class="section-title">
+Serviços
+</h2>
 
-    });
+<p class="section-subtitle">
 
-  </script>
+Clique no serviço de seu interesse
+para solicitar atendimento.
+
+</p>
+
+
+<div class="services-grid">
+
+
+<div
+class="service"
+onclick="abrirFormulario('TCC')">
+
+<h3>
+TCC
+</h3>
+
+<p>
+Orientação, revisão, organização e
+formatação do trabalho.
+</p>
+
+</div>
+
+
+<div
+class="service"
+onclick="abrirFormulario('Projetos Multidisciplinares')">
+
+<h3>
+Projetos Multidisciplinares
+</h3>
+
+<p>
+Auxílio na organização e revisão
+dos projetos acadêmicos.
+</p>
+
+</div>
+
+
+<div
+class="service"
+onclick="abrirFormulario('Relatórios de Estágio')">
+
+<h3>
+Relatórios de Estágio
+</h3>
+
+<p>
+Organização, revisão e formatação
+dos relatórios.
+</p>
+
+</div>
+
+
+<div
+class="service"
+onclick="abrirFormulario('Trabalhos Acadêmicos')">
+
+<h3>
+Trabalhos Acadêmicos
+</h3>
+
+<p>
+Apoio na estrutura, revisão e
+apresentação do material.
+</p>
+
+</div>
+
+
+<div
+class="service"
+onclick="abrirFormulario('Revisão e Formatação')">
+
+<h3>
+Revisão e Formatação
+</h3>
+
+<p>
+Revisão textual e organização
+visual do documento.
+</p>
+
+</div>
+
+
+<div
+class="service"
+onclick="abrirFormulario('Outro serviço')">
+
+<h3>
+Outros Serviços
+</h3>
+
+<p>
+Envie sua necessidade para
+verificarmos como ajudar.
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- ATENDIMENTO -->
+
+<section class="help">
+
+<div class="help-box">
+
+<h2 class="section-title">
+Atendimento personalizado
+</h2>
+
+<p>
+
+Cada solicitação é analisada individualmente.
+Envie as informações do seu trabalho e explique
+o que você precisa.
+
+</p>
+
+<p>
+
+O formulário encaminha sua solicitação
+diretamente para o WhatsApp da GAB.
+
+</p>
+
+<button
+class="btn"
+onclick="abrirFormulario('Atendimento geral')">
+
+Falar com a GAB
+
+</button>
+
+</div>
+
+</section>
+
+
+<!-- TRABALHOS JÁ REALIZADOS -->
+
+<section class="portfolio">
+
+<h2 class="section-title">
+Trabalhos já realizados
+</h2>
+
+<p class="section-subtitle">
+
+Confira alguns exemplos de materiais e resultados
+acompanhados pela GAB Assessoria Acadêmica.
+
+</p>
+
+
+<div class="portfolio-slider">
+
+
+<button
+class="portfolio-arrow portfolio-prev"
+onclick="mudarTrabalho(-1)"
+aria-label="Trabalho anterior">
+
+‹
+
+</button>
+
+
+<div class="portfolio-card">
+
+<img
+id="trabalhoImagem"
+src="imagens/trabalho1.jpg"
+alt="Exemplo de trabalho realizado">
+
+</div>
+
+
+<button
+class="portfolio-arrow portfolio-next"
+onclick="mudarTrabalho(1)"
+aria-label="Próximo trabalho">
+
+›
+
+</button>
+
+
+</div>
+
+
+<div class="portfolio-dots">
+
+
+<span
+class="portfolio-dot active"
+onclick="irParaTrabalho(0)">
+</span>
+
+
+<span
+class="portfolio-dot"
+onclick="irParaTrabalho(1)">
+</span>
+
+
+<span
+class="portfolio-dot"
+onclick="irParaTrabalho(2)">
+</span>
+
+
+<span
+class="portfolio-dot"
+onclick="irParaTrabalho(3)">
+</span>
+
+
+<span
+class="portfolio-dot"
+onclick="irParaTrabalho(4)">
+</span>
+
+
+<span
+class="portfolio-dot"
+onclick="irParaTrabalho(5)">
+</span>
+
+
+<span
+class="portfolio-dot"
+onclick="irParaTrabalho(6)">
+</span>
+
+
+</div>
+
+</section>
+
+
+<!-- FINAL -->
+
+<section class="cta">
+
+<h2>
+Precisa de orientação?
+</h2>
+
+<p>
+
+Envie sua solicitação e explique
+o que você precisa.
+
+</p>
+
+<button
+class="btn btn-light"
+onclick="abrirFormulario('Atendimento geral')">
+
+Solicitar atendimento
+
+</button>
+
+</section>
+
+
+</main>
+
+</div>
+
+
+<footer>
+
+© 2026 GAB Assessoria Acadêmica
+
+</footer>
+
+
+<!-- BOTÃO WHATSAPP -->
+
+<a
+class="whatsapp"
+href="https://wa.me/5551989924617"
+target="_blank"
+rel="noopener">
+
+WhatsApp
+
+</a>
+
+
+<!-- FORMULÁRIO -->
+
+<div
+class="modal"
+id="modal">
+
+
+<div class="modal-box">
+
+
+<button
+class="close"
+onclick="fecharFormulario()"
+aria-label="Fechar">
+
+×
+
+</button>
+
+
+<h2>
+Solicitar atendimento
+</h2>
+
+
+<p class="modal-subtitle">
+
+Preencha os dados abaixo.
+Ao enviar, sua solicitação será encaminhada
+pelo WhatsApp.
+
+</p>
+
+
+<form id="formulario">
+
+
+<label for="servico">
+Serviço
+</label>
+
+
+<select id="servico" required>
+
+<option value="">
+Selecione
+</option>
+
+<option>
+TCC
+</option>
+
+<option>
+Projetos Multidisciplinares
+</option>
+
+<option>
+Relatórios de Estágio
+</option>
+
+<option>
+Trabalhos Acadêmicos
+</option>
+
+<option>
+Revisão e Formatação
+</option>
+
+<option>
+Outro serviço
+</option>
+
+<option>
+Atendimento geral
+</option>
+
+</select>
+
+
+<label for="nome">
+Nome
+</label>
+
+<input
+id="nome"
+type="text"
+placeholder="Seu nome"
+required>
+
+
+<label for="faculdade">
+Instituição de ensino
+</label>
+
+<input
+id="faculdade"
+type="text"
+placeholder="Nome da instituição">
+
+
+<label for="telefone">
+Seu WhatsApp
+</label>
+
+<input
+id="telefone"
+type="tel"
+placeholder="(00) 00000-0000">
+
+
+<label for="mensagem">
+Como podemos ajudar?
+</label>
+
+<textarea
+id="mensagem"
+placeholder="Explique brevemente o que você precisa."
+required>
+</textarea>
+
+
+<button
+class="btn submit"
+type="submit">
+
+Enviar pelo WhatsApp
+
+</button>
+
+
+</form>
+
+</div>
+
+</div>
+
+
+<script>
+
+
+/* SLIDE */
+
+const trabalhos = [
+
+"imagens/trabalho1.jpg",
+
+"imagens/trabalho2.jpg",
+
+"imagens/trabalho3.jpg",
+
+"imagens/trabalho4.jpg",
+
+"imagens/trabalho5.jpg",
+
+"imagens/trabalho6.jpg",
+
+"imagens/trabalho7.jpg"
+
+];
+
+
+let trabalhoAtual = 0;
+
+
+function mostrarTrabalho(){
+
+document.getElementById("trabalhoImagem").src =
+trabalhos[trabalhoAtual];
+
+
+const dots =
+document.querySelectorAll(".portfolio-dot");
+
+
+dots.forEach(function(dot,indice){
+
+dot.classList.toggle(
+"active",
+indice === trabalhoAtual
+);
+
+});
+
+}
+
+
+function mudarTrabalho(direcao){
+
+trabalhoAtual += direcao;
+
+
+if(trabalhoAtual >= trabalhos.length){
+
+trabalhoAtual = 0;
+
+}
+
+
+if(trabalhoAtual < 0){
+
+trabalhoAtual =
+trabalhos.length - 1;
+
+}
+
+
+mostrarTrabalho();
+
+}
+
+
+function irParaTrabalho(indice){
+
+trabalhoAtual = indice;
+
+mostrarTrabalho();
+
+}
+
+
+/* TROCA AUTOMÁTICA */
+
+setInterval(function(){
+
+mudarTrabalho(1);
+
+},5000);
+
+
+/* FORMULÁRIO */
+
+function abrirFormulario(servico){
+
+document
+.getElementById("modal")
+.classList.add("show");
+
+
+if(servico){
+
+const select =
+document.getElementById("servico");
+
+const opcoes =
+[...select.options].map(
+option => option.value
+);
+
+
+if(opcoes.includes(servico)){
+
+select.value = servico;
+
+}
+
+}
+
+}
+
+
+function fecharFormulario(){
+
+document
+.getElementById("modal")
+.classList.remove("show");
+
+}
+
+
+document
+.getElementById("modal")
+.addEventListener(
+"click",
+function(e){
+
+if(e.target === this){
+
+fecharFormulario();
+
+}
+
+}
+);
+
+
+/* ENVIO WHATSAPP */
+
+document
+.getElementById("formulario")
+.addEventListener(
+"submit",
+function(e){
+
+e.preventDefault();
+
+
+const servico =
+document.getElementById("servico").value;
+
+
+const nome =
+document.getElementById("nome").value;
+
+
+const faculdade =
+document.getElementById("faculdade").value;
+
+
+const telefone =
+document.getElementById("telefone").value;
+
+
+const mensagem =
+document.getElementById("mensagem").value;
+
+
+const texto =
+
+"Olá, GAB Assessoria Acadêmica!%0A%0A" +
+
+"Gostaria de solicitar atendimento.%0A" +
+
+"Serviço: " +
+encodeURIComponent(servico) +
+"%0A" +
+
+"Nome: " +
+encodeURIComponent(nome) +
+"%0A" +
+
+"Instituição: " +
+encodeURIComponent(faculdade) +
+"%0A" +
+
+"Meu WhatsApp: " +
+encodeURIComponent(telefone) +
+"%0A" +
+
+"Mensagem: " +
+encodeURIComponent(mensagem);
+
+
+const numeroGab =
+"5551989924617";
+
+
+const link =
+"https://wa.me/" +
+numeroGab +
+"?text=" +
+texto;
+
+
+window.open(
+link,
+"_blank"
+);
+
+
+fecharFormulario();
+
+}
+);
+
+</script>
+
 
 </body>
+
 </html>
