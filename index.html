@@ -1,1511 +1,1335 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>GAB Assessoria Acadêmica</title>
-
-  <meta
-    name="description"
-    content="GAB Assessoria Acadêmica - apoio, orientação, revisão e formatação acadêmica."
-  >
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f7faf8;
-      color: #26352e;
-      line-height: 1.6;
-    }
-
-    button,
-    input,
-    select,
-    textarea {
-      font-family: inherit;
-    }
-
-    /* =========================
-       HEADER
-    ========================= */
-
-    header {
-      background: #ffffff;
-      padding: 18px 7%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      box-shadow: 0 2px 12px rgba(0,0,0,.06);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .logo {
-      font-size: 24px;
-      font-weight: 800;
-      color: #315d48;
-      letter-spacing: .3px;
-    }
-
-    .logo span {
-      color: #799b87;
-    }
-
-    nav {
-      display: flex;
-      gap: 25px;
-      align-items: center;
-    }
-
-    nav a {
-      color: #315d48;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 15px;
-    }
-
-    nav a:hover {
-      color: #799b87;
-    }
-
-    /* =========================
-       HERO
-    ========================= */
-
-    .hero {
-      min-height: 600px;
-      padding: 80px 7%;
-      display: flex;
-      align-items: center;
-      background:
-        linear-gradient(
-          90deg,
-          rgba(247,250,248,.98) 0%,
-          rgba(247,250,248,.93) 45%,
-          rgba(247,250,248,.55) 100%
-        ),
-        url("https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=1800&q=80")
-        center/cover;
-    }
-
-    .hero-content {
-      max-width: 650px;
-    }
-
-    .hero-label {
-      color: #799b87;
-      font-weight: 700;
-      margin-bottom: 15px;
-      font-size: 16px;
-    }
-
-    .hero h1 {
-      font-size: clamp(42px, 7vw, 76px);
-      line-height: 1.02;
-      color: #315d48;
-      margin-bottom: 25px;
-    }
-
-    .hero h1 span {
-      color: #799b87;
-    }
-
-    .hero p {
-      font-size: 19px;
-      color: #53655c;
-      max-width: 600px;
-      margin-bottom: 30px;
-    }
-
-    .hero-button {
-      display: inline-block;
-      background: #315d48;
-      color: white;
-      padding: 15px 27px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 700;
-      transition: .2s;
-    }
-
-    .hero-button:hover {
-      background: #254936;
-      transform: translateY(-2px);
-    }
-
-    /* =========================
-       SEÇÕES
-    ========================= */
-
-    section {
-      padding: 75px 7%;
-    }
-
-    .section-title {
-      text-align: center;
-      color: #315d48;
-      font-size: 38px;
-      margin-bottom: 12px;
-    }
-
-    .section-subtitle {
-      text-align: center;
-      color: #64756c;
-      max-width: 720px;
-      margin: 0 auto 45px;
-      font-size: 17px;
-    }
-
-    /* =========================
-       SERVIÇOS
-    ========================= */
-
-    .services {
-      background: #ffffff;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .card {
-      border: 1px solid #e0e9e4;
-      background: #f9fcfa;
-      border-radius: 20px;
-      padding: 30px 25px;
-      text-align: left;
-      cursor: pointer;
-      transition: .25s;
-      min-height: 190px;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 28px rgba(49,93,72,.12);
-      border-color: #b9cec1;
-    }
-
-    .card-icon {
-      font-size: 32px;
-      margin-bottom: 15px;
-    }
-
-    .card h3 {
-      color: #315d48;
-      font-size: 21px;
-      margin-bottom: 10px;
-    }
-
-    .card p {
-      color: #697870;
-      font-size: 15px;
-    }
-
-    /* =========================
-       COMO PODEMOS AJUDAR
-    ========================= */
-
-    .help {
-      background: #eef5f1;
-    }
-
-    .help-grid {
-      max-width: 1050px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-    }
-
-    .help-item {
-      background: #ffffff;
-      border-radius: 18px;
-      padding: 28px;
-      text-align: center;
-      box-shadow: 0 5px 20px rgba(0,0,0,.05);
-    }
-
-    .help-item strong {
-      display: block;
-      color: #315d48;
-      font-size: 18px;
-      margin-bottom: 8px;
-    }
-
-    .help-item p {
-      color: #697870;
-      font-size: 15px;
-    }
-
-    /* =========================
-       VÍDEO
-    ========================= */
-
-    .portfolio {
-      padding: 70px 7%;
-      text-align: center;
-      background: #ffffff;
-    }
-
-    .video-box {
-      width: 100%;
-      max-width: 850px;
-      margin: 0 auto;
-      background: #ffffff;
-      padding: 10px;
-      border-radius: 22px;
-      box-shadow: 0 8px 25px rgba(0,0,0,.10);
-    }
-
-    .video-box video {
-      display: block;
-      width: 100%;
-      max-height: 520px;
-      border-radius: 16px;
-      background: #000;
-    }
-
-    /* =========================
-       CTA
-    ========================= */
-
-    .cta {
-      background: #315d48;
-      color: white;
-      text-align: center;
-      padding: 65px 7%;
-    }
-
-    .cta h2 {
-      font-size: 38px;
-      margin-bottom: 15px;
-    }
-
-    .cta p {
-      max-width: 650px;
-      margin: 0 auto 25px;
-      font-size: 17px;
-      opacity: .92;
-    }
-
-    .cta-button {
-      display: inline-block;
-      background: white;
-      color: #315d48;
-      padding: 14px 28px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 800;
-    }
-
-    .cta-button:hover {
-      background: #eef5f1;
-    }
-
-    /* =========================
-       FOOTER
-    ========================= */
-
-    footer {
-      background: #23372c;
-      color: #dce8e1;
-      text-align: center;
-      padding: 28px 7%;
-      font-size: 14px;
-    }
-
-    /* =========================
-       WHATSAPP
-    ========================= */
-
-    .whatsapp {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      background: #25D366;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      font-size: 30px;
-      box-shadow: 0 6px 20px rgba(0,0,0,.18);
-      z-index: 2000;
-    }
-
-    .whatsapp:hover {
-      transform: scale(1.05);
-    }
-
-    /* =========================
-       MODAL
-    ========================= */
-
-    .modal {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,.55);
-      z-index: 3000;
-      padding: 20px;
-      overflow-y: auto;
-    }
-
-    .modal.active {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .modal-box {
-      width: 100%;
-      max-width: 650px;
-      background: white;
-      border-radius: 22px;
-      padding: 30px;
-      position: relative;
-      box-shadow: 0 15px 50px rgba(0,0,0,.25);
-      margin: auto;
-    }
-
-    .close {
-      position: absolute;
-      right: 18px;
-      top: 12px;
-      border: none;
-      background: none;
-      font-size: 30px;
-      color: #63736b;
-      cursor: pointer;
-    }
-
-    .modal-box h2 {
-      color: #315d48;
-      margin-bottom: 7px;
-      padding-right: 30px;
-    }
-
-    .modal-box .modal-subtitle {
-      color: #697870;
-      margin-bottom: 22px;
-      font-size: 14px;
-    }
-
-    .form-group {
-      margin-bottom: 16px;
-    }
-
-    .form-group label {
-      display: block;
-      color: #315d48;
-      font-weight: 700;
-      margin-bottom: 7px;
-      font-size: 14px;
-    }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      width: 100%;
-      border: 1px solid #d7e2dc;
-      border-radius: 11px;
-      padding: 12px 13px;
-      outline: none;
-      background: #fbfdfc;
-      color: #26352e;
-      font-size: 15px;
-    }
-
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-      border-color: #799b87;
-      box-shadow: 0 0 0 3px rgba(121,155,135,.12);
-    }
-
-    .form-group textarea {
-      min-height: 95px;
-      resize: vertical;
-    }
-
-    .submit-button {
-      width: 100%;
-      border: none;
-      background: #315d48;
-      color: white;
-      padding: 14px;
-      border-radius: 12px;
-      font-weight: 800;
-      font-size: 16px;
-      cursor: pointer;
-      margin-top: 5px;
-    }
-
-    .submit-button:hover {
-      background: #254936;
-    }
-
-    /* =========================
-       RESPONSIVO
-    ========================= */
-
-    @media (max-width: 900px) {
-
-      .cards {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .help-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      nav {
-        gap: 12px;
-      }
-    }
-
-    @media (max-width: 600px) {
-
-      header {
-        padding: 15px 5%;
-      }
-
-      .logo {
-        font-size: 20px;
-      }
-
-      nav {
-        display: none;
-      }
-
-      .hero {
-        min-height: 560px;
-        padding: 65px 5%;
-      }
-
-      .hero h1 {
-        font-size: 48px;
-      }
-
-      .hero p {
-        font-size: 17px;
-      }
-
-      section {
-        padding: 55px 5%;
-      }
-
-      .section-title {
-        font-size: 30px;
-      }
-
-      .cards {
-        grid-template-columns: 1fr;
-      }
-
-      .help-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .portfolio {
-        padding: 50px 5%;
-      }
-
-      .video-box {
-        padding: 6px;
-        border-radius: 16px;
-      }
-
-      .video-box video {
-        border-radius: 12px;
-      }
-
-      .cta h2 {
-        font-size: 30px;
-      }
-
-      .modal {
-        padding: 12px;
-      }
-
-      .modal-box {
-        padding: 25px 18px;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GAB Assessoria Acadêmica</title>
+<meta name="description" content="GAB Assessoria Acadêmica - apoio, orientação, revisão e formatação acadêmica.">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f7faf8;
+  color:#26352e;
+  line-height:1.6
+}
+
+button,input,select,textarea{
+  font-family:inherit
+}
+
+/* HEADER */
+
+header{
+  background:#fff;
+  padding:18px 7%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  box-shadow:0 2px 12px rgba(0,0,0,.06);
+  position:sticky;
+  top:0;
+  z-index:1000
+}
+
+.logo{
+  font-size:24px;
+  font-weight:800;
+  color:#315d48
+}
+
+.logo span{
+  color:#799b87
+}
+
+nav{
+  display:flex;
+  gap:25px
+}
+
+nav a{
+  color:#315d48;
+  text-decoration:none;
+  font-weight:600;
+  font-size:15px
+}
+
+/* HERO */
+
+.hero{
+  min-height:600px;
+  padding:80px 7%;
+  display:flex;
+  align-items:center;
+  background:
+  linear-gradient(90deg,rgba(247,250,248,.98),rgba(247,250,248,.55)),
+  url("https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=1800&q=80")
+  center/cover
+}
+
+.hero-content{
+  max-width:650px
+}
+
+.hero-label{
+  color:#799b87;
+  font-weight:700;
+  margin-bottom:15px
+}
+
+.hero h1{
+  font-size:clamp(42px,7vw,76px);
+  line-height:1.02;
+  color:#315d48;
+  margin-bottom:25px
+}
+
+.hero h1 span{
+  color:#799b87
+}
+
+.hero p{
+  font-size:19px;
+  color:#53655c;
+  max-width:600px;
+  margin-bottom:30px
+}
+
+.hero-button{
+  display:inline-block;
+  background:#315d48;
+  color:white;
+  padding:15px 27px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:700
+}
+
+/* SEÇÕES */
+
+section{
+  padding:75px 7%
+}
+
+.section-title{
+  text-align:center;
+  color:#315d48;
+  font-size:38px;
+  margin-bottom:12px
+}
+
+.section-subtitle{
+  text-align:center;
+  color:#64756c;
+  max-width:720px;
+  margin:0 auto 45px;
+  font-size:17px
+}
+
+/* SERVIÇOS */
+
+.services{
+  background:#fff
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+  max-width:1100px;
+  margin:auto
+}
+
+.card{
+  border:1px solid #e0e9e4;
+  background:#f9fcfa;
+  border-radius:20px;
+  padding:30px 25px;
+  text-align:left;
+  cursor:pointer;
+  transition:.25s;
+  min-height:190px
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 10px 28px rgba(49,93,72,.12)
+}
+
+.card-icon{
+  font-size:32px;
+  margin-bottom:15px
+}
+
+.card h3{
+  color:#315d48;
+  font-size:21px;
+  margin-bottom:10px
+}
+
+.card p{
+  color:#697870;
+  font-size:15px
+}
+
+/* AJUDA */
+
+.help{
+  background:#eef5f1
+}
+
+.help-grid{
+  max-width:1050px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px
+}
+
+.help-item{
+  background:#fff;
+  border-radius:18px;
+  padding:28px;
+  text-align:center;
+  box-shadow:0 5px 20px rgba(0,0,0,.05)
+}
+
+.help-item strong{
+  display:block;
+  color:#315d48;
+  font-size:18px;
+  margin-bottom:8px
+}
+
+.help-item p{
+  color:#697870;
+  font-size:15px
+}
+
+/* VÍDEO */
+
+.portfolio{
+  padding:70px 7%;
+  text-align:center;
+  background:#fff
+}
+
+.video-box{
+  width:100%;
+  max-width:850px;
+  margin:auto;
+  background:#fff;
+  padding:10px;
+  border-radius:22px;
+  box-shadow:0 8px 25px rgba(0,0,0,.10)
+}
+
+.video-box video{
+  display:block;
+  width:100%;
+  max-height:520px;
+  border-radius:16px;
+  background:#000
+}
+
+/* CTA */
+
+.cta{
+  background:#315d48;
+  color:#fff;
+  text-align:center;
+  padding:65px 7%
+}
+
+.cta h2{
+  font-size:38px;
+  margin-bottom:15px
+}
+
+.cta p{
+  max-width:650px;
+  margin:0 auto 25px;
+  font-size:17px
+}
+
+.cta-button{
+  display:inline-block;
+  background:#fff;
+  color:#315d48;
+  padding:15px 27px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:800
+}
+
+/* FOOTER */
+
+footer{
+  background:#23372c;
+  color:#dce8e1;
+  text-align:center;
+  padding:28px 7%;
+  font-size:14px
+}
+
+/* WHATSAPP */
+
+.whatsapp{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  background:#25D366;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  font-size:28px;
+  box-shadow:0 6px 20px rgba(0,0,0,.18);
+  z-index:2000
+}
+
+/* MODAL */
+
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.55);
+  z-index:3000;
+  padding:20px;
+  overflow-y:auto
+}
+
+.modal.active{
+  display:flex;
+  align-items:center;
+  justify-content:center
+}
+
+.modal-box{
+  width:100%;
+  max-width:650px;
+  background:white;
+  border-radius:22px;
+  padding:30px;
+  position:relative;
+  box-shadow:0 15px 50px rgba(0,0,0,.25)
+}
+
+.close{
+  position:absolute;
+  right:18px;
+  top:12px;
+  border:0;
+  background:none;
+  font-size:30px;
+  color:#63736b;
+  cursor:pointer
+}
+
+.modal-box h2{
+  color:#315d48;
+  margin-bottom:7px
+}
+
+.modal-subtitle{
+  color:#697870;
+  margin-bottom:22px;
+  font-size:14px
+}
+
+.form-group{
+  margin-bottom:16px
+}
+
+.form-group label{
+  display:block;
+  color:#315d48;
+  font-weight:700;
+  margin-bottom:7px;
+  font-size:14px
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+  width:100%;
+  border:1px solid #d7e2dc;
+  border-radius:11px;
+  padding:12px 13px;
+  outline:0;
+  background:#fbfdfc;
+  color:#26352e;
+  font-size:15px
+}
+
+.form-group textarea{
+  min-height:95px;
+  resize:vertical
+}
+
+.submit-button{
+  width:100%;
+  border:0;
+  background:#315d48;
+  color:white;
+  padding:14px;
+  border-radius:12px;
+  font-weight:800;
+  font-size:16px;
+  cursor:pointer
+}
+
+/* CELULAR */
+
+@media(max-width:900px){
+
+  .cards{
+    grid-template-columns:repeat(2,1fr)
+  }
+
+  .help-grid{
+    grid-template-columns:repeat(2,1fr)
+  }
+}
+
+@media(max-width:600px){
+
+  header{
+    padding:15px 5%
+  }
+
+  nav{
+    display:none
+  }
+
+  .hero{
+    min-height:560px;
+    padding:65px 5%
+  }
+
+  .hero h1{
+    font-size:48px
+  }
+
+  .hero p{
+    font-size:17px
+  }
+
+  section{
+    padding:55px 5%
+  }
+
+  .section-title{
+    font-size:30px
+  }
+
+  .cards,
+  .help-grid{
+    grid-template-columns:1fr
+  }
+
+  .portfolio{
+    padding:50px 5%
+  }
+
+  .video-box{
+    padding:6px
+  }
+
+  .cta h2{
+    font-size:30px
+  }
+
+  .modal{
+    padding:12px
+  }
+
+  .modal-box{
+    padding:25px 18px
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <!-- =========================
-       HEADER
-  ========================= -->
+<header>
 
-  <header>
-    <div class="logo">
-      GAB <span>Assessoria Acadêmica</span>
+  <div class="logo">
+    GAB <span>Assessoria Acadêmica</span>
+  </div>
+
+  <nav>
+    <a href="#inicio">Início</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#ajuda">Como podemos ajudar</a>
+    <a href="#contato">Contato</a>
+  </nav>
+
+</header>
+
+
+<section class="hero" id="inicio">
+
+  <div class="hero-content">
+
+    <div class="hero-label">
+      ⌁ Assessoria acadêmica
     </div>
 
-    <nav>
-      <a href="#inicio">Início</a>
-      <a href="#servicos">Serviços</a>
-      <a href="#ajuda">Como podemos ajudar</a>
-      <a href="#contato">Contato</a>
-    </nav>
-  </header>
-
-
-  <!-- =========================
-       HERO
-  ========================= -->
-
-  <section class="hero" id="inicio">
-
-    <div class="hero-content">
-
-      <div class="hero-label">
-        ⌁ Assessoria acadêmica
-      </div>
-
-      <h1>
-        GAB<br>
-        <span>Assessoria</span><br>
-        Acadêmica
-      </h1>
-
-      <p>
-        Apoio, orientação, revisão e formatação para seus trabalhos
-        acadêmicos, com atendimento personalizado e acompanhamento
-        durante o processo.
-      </p>
-
-      <a href="#servicos" class="hero-button">
-        Conheça nossos serviços
-      </a>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       SERVIÇOS
-  ========================= -->
-
-  <section class="services" id="servicos">
-
-    <h2 class="section-title">
-      Nossos Serviços
-    </h2>
-
-    <p class="section-subtitle">
-      Escolha o serviço que você precisa e preencha o formulário
-      para solicitar atendimento.
-    </p>
-
-
-    <div class="cards">
-
-      <!-- TCC -->
-
-      <button class="card" onclick="abrirFormulario('TCC')">
-
-        <div class="card-icon">📚</div>
-
-        <h3>
-          TCC
-        </h3>
-
-        <p>
-          Orientação, estruturação, revisão e formatação do seu
-          Trabalho de Conclusão de Curso.
-        </p>
-
-      </button>
-
-
-      <!-- PROJETO MULTIDISCIPLINAR -->
-
-      <button
-        class="card"
-        onclick="abrirFormulario('Projetos Multidisciplinares')"
-      >
-
-        <div class="card-icon">📝</div>
-
-        <h3>
-          Projetos Multidisciplinares
-        </h3>
-
-        <p>
-          Apoio na organização e desenvolvimento de projetos
-          acadêmicos multidisciplinares.
-        </p>
-
-      </button>
-
-
-      <!-- ESTÁGIO -->
-
-      <button
-        class="card"
-        onclick="abrirFormulario('Relatórios de Estágio')"
-      >
-
-        <div class="card-icon">🎓</div>
-
-        <h3>
-          Relatórios de Estágio
-        </h3>
-
-        <p>
-          Orientação e organização dos relatórios e documentos
-          relacionados ao estágio.
-        </p>
-
-      </button>
-
-
-      <!-- FORMATAÇÃO -->
-
-      <button
-        class="card"
-        onclick="abrirFormulario('Formatação de Documentos')"
-      >
-
-        <div class="card-icon">📄</div>
-
-        <h3>
-          Formatação de Documentos
-        </h3>
-
-        <p>
-          Ajustes de estrutura, organização e formatação conforme
-          as normas solicitadas.
-        </p>
-
-      </button>
-
-
-      <!-- TRABALHOS ACADÊMICOS -->
-
-      <button
-        class="card"
-        onclick="abrirFormulario('Trabalhos Acadêmicos')"
-      >
-
-        <div class="card-icon">✏️</div>
-
-        <h3>
-          Trabalhos Acadêmicos
-        </h3>
-
-        <p>
-          Apoio para diferentes tipos de atividades e trabalhos
-          acadêmicos.
-        </p>
-
-      </button>
-
-
-      <!-- PROJETO INTEGRADOR -->
-
-      <button
-        class="card"
-        onclick="abrirFormulario('Projeto Integrador')"
-      >
-
-        <div class="card-icon">💡</div>
-
-        <h3>
-          Projeto Integrador
-        </h3>
-
-        <p>
-          Apoio na organização e desenvolvimento do projeto
-          integrador do seu curso.
-        </p>
-
-      </button>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       COMO PODEMOS AJUDAR
-  ========================= -->
-
-  <section class="help" id="ajuda">
-
-    <h2 class="section-title">
-      Como podemos ajudar
-    </h2>
-
-    <p class="section-subtitle">
-      Conte com a GAB para organizar melhor sua rotina acadêmica.
-    </p>
-
-
-    <div class="help-grid">
-
-      <div class="help-item">
-        <strong>Orientação</strong>
-        <p>
-          Auxílio para entender as etapas e organizar seu trabalho.
-        </p>
-      </div>
-
-      <div class="help-item">
-        <strong>Revisão</strong>
-        <p>
-          Revisão e ajustes para melhorar a apresentação do material.
-        </p>
-      </div>
-
-      <div class="help-item">
-        <strong>Formatação</strong>
-        <p>
-          Organização do documento conforme as orientações recebidas.
-        </p>
-      </div>
-
-      <div class="help-item">
-        <strong>Organização</strong>
-        <p>
-          Ajuda para estruturar informações, tópicos e documentos.
-        </p>
-      </div>
-
-      <div class="help-item">
-        <strong>Acompanhamento</strong>
-        <p>
-          Atendimento durante o desenvolvimento da atividade.
-        </p>
-      </div>
-
-      <div class="help-item">
-        <strong>Atendimento personalizado</strong>
-        <p>
-          Cada solicitação é analisada de acordo com suas necessidades.
-        </p>
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       VÍDEO
-  ========================= -->
-
-  <section class="portfolio">
-
-    <h2 class="section-title">
-      Venha fazer seus trabalhos acadêmicos com a GAB!
-    </h2>
-
-    <p class="section-subtitle">
-      Confira um pouco do nosso trabalho e dos serviços que oferecemos.
-    </p>
-
-    <div class="video-box">
-
-      <video
-        controls
-        playsinline
-        preload="metadata"
-      >
-
-        <source
-          src="WhatsApp Video 2026-09-07 at 15.02.56.mp4"
-          type="video/mp4"
-        >
-
-        Seu navegador não suporta vídeos.
-
-      </video>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       CTA
-  ========================= -->
-
-  <section class="cta" id="contato">
-
-    <h2>
-      Precisa de ajuda com seu trabalho?
-    </h2>
+    <h1>
+      GAB<br>
+      <span>Assessoria</span><br>
+      Acadêmica
+    </h1>
 
     <p>
-      Escolha um dos serviços acima, preencha o formulário
-      e fale diretamente com a GAB pelo WhatsApp.
+      Apoio, orientação, revisão e formatação para seus trabalhos
+      acadêmicos, com atendimento personalizado e acompanhamento
+      durante o processo.
     </p>
 
-    <a
-      class="cta-button"
-      href="https://wa.me/5551989924617"
-      target="_blank"
-    >
-      Falar com a GAB
+    <a href="#servicos" class="hero-button">
+      Conheça nossos serviços
     </a>
 
-  </section>
+  </div>
+
+</section>
 
 
-  <!-- =========================
-       FOOTER
-  ========================= -->
+<section class="services" id="servicos">
 
-  <footer>
+  <h2 class="section-title">
+    Nossos Serviços
+  </h2>
 
-    © 2026 GAB Assessoria Acadêmica.
-    Todos os direitos reservados.
-
-  </footer>
-
-
-  <!-- =========================
-       BOTÃO WHATSAPP
-  ========================= -->
-
-  <a
-    class="whatsapp"
-    href="https://wa.me/5551989924617"
-    target="_blank"
-    aria-label="Falar com a GAB pelo WhatsApp"
-  >
-    ☎️
-  </a>
+  <p class="section-subtitle">
+    Escolha o serviço que você precisa e preencha o formulário
+    para solicitar atendimento.
+  </p>
 
 
-  <!-- =========================
-       MODAL DO FORMULÁRIO
-  ========================= -->
+  <div class="cards">
 
-  <div class="modal" id="modal">
+    <button class="card" onclick="abrirFormulario('TCC')">
 
-    <div class="modal-box">
+      <div class="card-icon">📚</div>
 
-      <button
-        class="close"
-        onclick="fecharFormulario()"
-        aria-label="Fechar"
-      >
-        ×
-      </button>
+      <h3>
+        TCC
+      </h3>
 
-      <h2 id="modalTitulo">
-        Solicitação
-      </h2>
-
-      <p class="modal-subtitle">
-        Preencha os dados abaixo para enviar sua solicitação.
+      <p>
+        Orientação, estruturação, revisão e formatação do seu
+        Trabalho de Conclusão de Curso.
       </p>
 
-      <form id="formulario">
-
-        <div id="camposServico"></div>
+    </button>
 
 
-        <!-- DADOS DO CLIENTE -->
+    <button
+      class="card"
+      onclick="abrirFormulario('Projetos Multidisciplinares')"
+    >
 
-        <div class="form-group">
+      <div class="card-icon">📝</div>
 
-          <label for="nome">
-            Seu nome
-          </label>
+      <h3>
+        Projetos Multidisciplinares
+      </h3>
 
-          <input
-            type="text"
-            id="nome"
-            placeholder="Digite seu nome"
-            required
-          >
+      <p>
+        Apoio na organização e desenvolvimento de projetos
+        acadêmicos multidisciplinares.
+      </p>
 
-        </div>
-
-
-        <div class="form-group">
-
-          <label for="whatsapp">
-            WhatsApp para contato
-          </label>
-
-          <input
-            type="tel"
-            id="whatsapp"
-            placeholder="Digite seu WhatsApp"
-            required
-          >
-
-        </div>
+    </button>
 
 
-        <div class="form-group">
+    <button
+      class="card"
+      onclick="abrirFormulario('Relatórios de Estágio')"
+    >
 
-          <label for="informacoes">
-            Informações adicionais
-          </label>
+      <div class="card-icon">🎓</div>
 
-          <textarea
-            id="informacoes"
-            placeholder="Digite outras informações importantes..."
-          ></textarea>
+      <h3>
+        Relatórios de Estágio
+      </h3>
 
-        </div>
+      <p>
+        Orientação e organização dos relatórios e documentos
+        relacionados ao estágio.
+      </p>
+
+    </button>
 
 
-        <button
-          type="submit"
-          class="submit-button"
-        >
-          Enviar solicitação pelo WhatsApp
-        </button>
+    <button
+      class="card"
+      onclick="abrirFormulario('Formatação de Documentos')"
+    >
 
-      </form>
+      <div class="card-icon">📄</div>
 
+      <h3>
+        Formatação de Documentos
+      </h3>
+
+      <p>
+        Ajustes de estrutura, organização e formatação conforme
+        as normas solicitadas.
+      </p>
+
+    </button>
+
+
+    <button
+      class="card"
+      onclick="abrirFormulario('Trabalhos Acadêmicos')"
+    >
+
+      <div class="card-icon">✏️</div>
+
+      <h3>
+        Trabalhos Acadêmicos
+      </h3>
+
+      <p>
+        Apoio para diferentes tipos de atividades e trabalhos
+        acadêmicos.
+      </p>
+
+    </button>
+
+
+    <button
+      class="card"
+      onclick="abrirFormulario('Projeto Integrador')"
+    >
+
+      <div class="card-icon">💡</div>
+
+      <h3>
+        Projeto Integrador
+      </h3>
+
+      <p>
+        Apoio na organização e desenvolvimento do projeto
+        integrador do seu curso.
+      </p>
+
+    </button>
+
+  </div>
+
+</section>
+
+
+<section class="help" id="ajuda">
+
+  <h2 class="section-title">
+    Como podemos ajudar
+  </h2>
+
+  <p class="section-subtitle">
+    Conte com a GAB para organizar melhor sua rotina acadêmica.
+  </p>
+
+
+  <div class="help-grid">
+
+    <div class="help-item">
+      <strong>Orientação</strong>
+      <p>
+        Auxílio para entender as etapas e organizar seu trabalho.
+      </p>
+    </div>
+
+    <div class="help-item">
+      <strong>Revisão</strong>
+      <p>
+        Revisão e ajustes para melhorar a apresentação do material.
+      </p>
+    </div>
+
+    <div class="help-item">
+      <strong>Formatação</strong>
+      <p>
+        Organização do documento conforme as orientações recebidas.
+      </p>
+    </div>
+
+    <div class="help-item">
+      <strong>Organização</strong>
+      <p>
+        Ajuda para estruturar informações, tópicos e documentos.
+      </p>
+    </div>
+
+    <div class="help-item">
+      <strong>Acompanhamento</strong>
+      <p>
+        Atendimento durante o desenvolvimento da atividade.
+      </p>
+    </div>
+
+    <div class="help-item">
+      <strong>Atendimento personalizado</strong>
+      <p>
+        Cada solicitação é analisada de acordo com suas necessidades.
+      </p>
     </div>
 
   </div>
 
-
-  <!-- =========================
-       JAVASCRIPT
-  ========================= -->
-
-  <script>
-
-    const numeroGab = "5551989924617";
-
-    let servicoSelecionado = "";
+</section>
 
 
-    /* =========================
-       CONFIGURAÇÃO DOS FORMULÁRIOS
-    ========================= */
+<section class="portfolio">
 
-    const campos = {
+  <h2 class="section-title">
+    Venha fazer seus trabalhos acadêmicos com a GAB!
+  </h2>
 
-      "TCC": [
+  <p class="section-subtitle">
+    Confira um pouco do nosso trabalho e dos serviços que oferecemos.
+  </p>
 
-        {
-          label: "Curso",
-          type: "text",
-          name: "Curso",
-          placeholder: "Digite o seu curso"
-        },
+  <div class="video-box">
 
-        {
-          label: "Tema do TCC",
-          type: "text",
-          name: "Tema do TCC",
-          placeholder: "Digite o tema"
-        },
+    <video
+      controls
+      playsinline
+      preload="metadata"
+    >
 
-        {
-          label: "Quantidade de páginas",
-          type: "select",
-          name: "Quantidade de páginas",
-          options: [
-            "23 páginas",
-            "24 páginas"
-          ]
-        },
+      <source
+        src="WhatsApp Video 2026-09-07 at 15.02.56.mp4"
+        type="video/mp4"
+      >
 
-        {
-          label: "Prazo desejado",
-          type: "text",
-          name: "Prazo desejado",
-          placeholder: "Ex.: 15 dias"
-        },
+      Seu navegador não suporta vídeos.
 
-        {
-          label: "Instituição",
-          type: "text",
-          name: "Instituição",
-          placeholder: "Digite a instituição"
-        }
+    </video>
 
-      ],
+  </div>
+
+</section>
 
 
-      "Projetos Multidisciplinares": [
+<section class="cta" id="contato">
 
-        {
-          label: "Curso",
-          type: "text",
-          name: "Curso",
-          placeholder: "Digite o seu curso"
-        },
+  <h2>
+    Precisa de ajuda com seu trabalho?
+  </h2>
 
-        {
-          label: "Tema do projeto",
-          type: "text",
-          name: "Tema do projeto",
-          placeholder: "Digite o tema do projeto"
-        },
+  <p>
+    Escolha um dos serviços acima, preencha o formulário
+    e fale diretamente com a GAB pelo WhatsApp.
+  </p>
 
-        {
-          label: "Prazo desejado",
-          type: "text",
-          name: "Prazo desejado",
-          placeholder: "Ex.: 10 dias"
-        }
+  <a
+    class="cta-button"
+    href="https://wa.me/5551989924617"
+    target="_blank"
+  >
+    Falar com a GAB
+  </a>
 
-      ],
+</section>
 
 
-      "Relatórios de Estágio": [
+<footer>
 
-        {
-          label: "Curso",
-          type: "text",
-          name: "Curso",
-          placeholder: "Digite o seu curso"
-        },
+  © 2026 GAB Assessoria Acadêmica.
+  Todos os direitos reservados.
 
-        {
-          label: "Tipo de estágio",
-          type: "select",
-          name: "Tipo de estágio",
-          options: [
-            "Educação Infantil",
-            "Gestão",
-            "Fundamental",
-            "Inclusiva",
-            "EJA"
-          ]
-        },
-
-        {
-          label: "Carga horária",
-          type: "select",
-          name: "Carga horária",
-          options: [
-            "80 horas",
-            "100 horas"
-          ]
-        },
-
-        {
-          label: "Prazo desejado",
-          type: "text",
-          name: "Prazo desejado",
-          placeholder: "Ex.: 7 dias"
-        }
-
-      ],
+</footer>
 
 
-      "Formatação de Documentos": [
-
-        {
-          label: "Tipo de documento",
-          type: "text",
-          name: "Tipo de documento",
-          placeholder: "Ex.: TCC, artigo, relatório..."
-        },
-
-        {
-          label: "Norma exigida",
-          type: "text",
-          name: "Norma exigida",
-          placeholder: "Ex.: ABNT"
-        },
-
-        {
-          label: "Quantidade de páginas",
-          type: "number",
-          name: "Quantidade de páginas",
-          placeholder: "Digite a quantidade"
-        },
-
-        {
-          label: "Prazo desejado",
-          type: "text",
-          name: "Prazo desejado",
-          placeholder: "Ex.: 5 dias"
-        }
-
-      ],
+<a
+  class="whatsapp"
+  href="https://wa.me/5551989924617"
+  target="_blank"
+  aria-label="Falar com a GAB pelo WhatsApp"
+>
+  ☎️
+</a>
 
 
-      "Trabalhos Acadêmicos": [
+<div class="modal" id="modal">
 
-        {
-          label: "Curso",
-          type: "text",
-          name: "Curso",
-          placeholder: "Digite o seu curso"
-        },
+  <div class="modal-box">
 
-        {
-          label: "Tipo de trabalho",
-          type: "text",
-          name: "Tipo de trabalho",
-          placeholder: "Ex.: resumo, artigo, atividade..."
-        },
+    <button
+      class="close"
+      onclick="fecharFormulario()"
+      aria-label="Fechar"
+    >
+      ×
+    </button>
 
-        {
-          label: "Tema",
-          type: "text",
-          name: "Tema",
-          placeholder: "Digite o tema"
-        },
+    <h2 id="modalTitulo">
+      Solicitação
+    </h2>
 
-        {
-          label: "Quantidade de páginas",
-          type: "number",
-          name: "Quantidade de páginas",
-          placeholder: "Digite a quantidade"
-        },
+    <p class="modal-subtitle">
+      Preencha os dados abaixo para enviar sua solicitação.
+    </p>
 
-        {
-          label: "Prazo desejado",
-          type: "text",
-          name: "Prazo desejado",
-          placeholder: "Ex.: 7 dias"
-        }
+    <form id="formulario">
 
-      ],
+      <div id="camposServico"></div>
 
 
-      "Projeto Integrador": [
+      <div class="form-group">
 
-        {
-          label: "Curso",
-          type: "text",
-          name: "Curso",
-          placeholder: "Digite o seu curso"
-        },
+        <label for="nome">
+          Seu nome
+        </label>
 
-        {
-          label: "Tema do projeto",
-          type: "text",
-          name: "Tema do projeto",
-          placeholder: "Digite o tema"
-        },
+        <input
+          type="text"
+          id="nome"
+          placeholder="Digite seu nome"
+          required
+        >
 
-        {
-          label: "Orientações da atividade",
-          type: "textarea",
-          name: "Orientações da atividade",
-          placeholder: "Cole ou explique as orientações da atividade"
-        },
+      </div>
 
-        {
-          label: "Quantidade de páginas",
-          type: "number",
-          name: "Quantidade de páginas",
-          placeholder: "Digite a quantidade"
-        },
 
-        {
-          label: "Prazo desejado",
-          type: "text",
-          name: "Prazo desejado",
-          placeholder: "Ex.: 10 dias"
-        }
+      <div class="form-group">
 
+        <label for="whatsapp">
+          WhatsApp para contato
+        </label>
+
+        <input
+          type="tel"
+          id="whatsapp"
+          placeholder="Digite seu WhatsApp"
+          required
+        >
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label for="informacoes">
+          Informações adicionais
+        </label>
+
+        <textarea
+          id="informacoes"
+          placeholder="Digite outras informações importantes..."
+        ></textarea>
+
+      </div>
+
+
+      <button
+        type="submit"
+        class="submit-button"
+      >
+        Enviar solicitação pelo WhatsApp
+      </button>
+
+    </form>
+
+  </div>
+
+</div>
+
+
+<script>
+
+const numeroGab = "5551989924617";
+
+let servicoSelecionado = "";
+
+
+const campos = {
+
+  "TCC": [
+
+    {
+      label: "Curso",
+      type: "text",
+      name: "Curso",
+      placeholder: "Digite o seu curso"
+    },
+
+    {
+      label: "Tema do TCC",
+      type: "text",
+      name: "Tema do TCC",
+      placeholder: "Digite o tema"
+    },
+
+    {
+      label: "Quantidade de páginas",
+      type: "select",
+      name: "Quantidade de páginas",
+      options: [
+        "23 páginas",
+        "24 páginas"
       ]
+    },
 
-    };
+    {
+      label: "Prazo desejado",
+      type: "text",
+      name: "Prazo desejado",
+      placeholder: "Ex.: 15 dias"
+    },
 
+    {
+      label: "Instituição",
+      type: "text",
+      name: "Instituição",
+      placeholder: "Digite a instituição"
+    }
 
-    /* =========================
-       ABRIR FORMULÁRIO
-    ========================= */
-
-    function abrirFormulario(servico) {
-
-      servicoSelecionado = servico;
-
-      document.getElementById("modalTitulo").textContent =
-        servico;
-
-      const container =
-        document.getElementById("camposServico");
-
-      container.innerHTML = "";
+  ],
 
 
-      const lista = campos[servico] || [];
+  "Projetos Multidisciplinares": [
+
+    {
+      label: "Curso",
+      type: "text",
+      name: "Curso",
+      placeholder: "Digite o seu curso"
+    },
+
+    {
+      label: "Tema do projeto",
+      type: "text",
+      name: "Tema do projeto",
+      placeholder: "Digite o tema do projeto"
+    },
+
+    {
+      label: "Prazo desejado",
+      type: "text",
+      name: "Prazo desejado",
+      placeholder: "Ex.: 10 dias"
+    }
+
+  ],
 
 
-      lista.forEach(function(campo, index) {
+  "Relatórios de Estágio": [
 
-        const grupo =
-          document.createElement("div");
+    {
+      label: "Curso",
+      type: "text",
+      name: "Curso",
+      placeholder: "Digite o seu curso"
+    },
 
-        grupo.className = "form-group";
+    {
+      label: "Tipo de estágio",
+      type: "select",
+      name: "Tipo de estágio",
+      options: [
+        "Educação Infantil",
+        "Gestão",
+        "Fundamental",
+        "Inclusiva",
+        "EJA"
+      ]
+    },
 
+    {
+      label: "Carga horária",
+      type: "select",
+      name: "Carga horária",
+      options: [
+        "80 horas",
+        "100 horas"
+      ]
+    },
 
-        const label =
-          document.createElement("label");
+    {
+      label: "Prazo desejado",
+      type: "text",
+      name: "Prazo desejado",
+      placeholder: "Ex.: 7 dias"
+    }
 
-        label.textContent =
-          campo.label;
-
-        grupo.appendChild(label);
-
-
-        let elemento;
-
-
-        /* SELECT */
-
-        if (campo.type === "select") {
-
-          elemento =
-            document.createElement("select");
-
-          elemento.required = true;
-
-
-          const primeiraOpcao =
-            document.createElement("option");
-
-          primeiraOpcao.value = "";
-
-          primeiraOpcao.textContent =
-            "Selecione uma opção";
-
-          primeiraOpcao.disabled = true;
-
-          primeiraOpcao.selected = true;
-
-          elemento.appendChild(primeiraOpcao);
+  ],
 
 
-          campo.options.forEach(function(opcao) {
+  "Formatação de Documentos": [
 
-            const option =
-              document.createElement("option");
+    {
+      label: "Tipo de documento",
+      type: "text",
+      name: "Tipo de documento",
+      placeholder: "Ex.: TCC, artigo, relatório..."
+    },
 
-            option.value = opcao;
+    {
+      label: "Norma exigida",
+      type: "text",
+      name: "Norma exigida",
+      placeholder: "Ex.: ABNT"
+    },
 
-            option.textContent = opcao;
+    {
+      label: "Quantidade de páginas",
+      type: "number",
+      name: "Quantidade de páginas",
+      placeholder: "Digite a quantidade"
+    },
 
-            elemento.appendChild(option);
+    {
+      label: "Prazo desejado",
+      type: "text",
+      name: "Prazo desejado",
+      placeholder: "Ex.: 5 dias"
+    }
 
-          });
-
-        }
-
-
-        /* TEXTAREA */
-
-        else if (campo.type === "textarea") {
-
-          elemento =
-            document.createElement("textarea");
-
-          elemento.placeholder =
-            campo.placeholder || "";
-
-          elemento.required = true;
-
-        }
-
-
-        /* INPUT */
-
-        else {
-
-          elemento =
-            document.createElement("input");
-
-          elemento.type =
-            campo.type || "text";
-
-          elemento.placeholder =
-            campo.placeholder || "";
-
-          elemento.required = true;
-
-        }
+  ],
 
 
-        elemento.name =
-          "servico_" + index;
+  "Trabalhos Acadêmicos": [
 
-        elemento.dataset.label =
-          campo.name;
+    {
+      label: "Curso",
+      type: "text",
+      name: "Curso",
+      placeholder: "Digite o seu curso"
+    },
+
+    {
+      label: "Tipo de trabalho",
+      type: "text",
+      name: "Tipo de trabalho",
+      placeholder: "Ex.: resumo, artigo, atividade..."
+    },
+
+    {
+      label: "Tema",
+      type: "text",
+      name: "Tema",
+      placeholder: "Digite o tema"
+    },
+
+    {
+      label: "Quantidade de páginas",
+      type: "number",
+      name: "Quantidade de páginas",
+      placeholder: "Digite a quantidade"
+    },
+
+    {
+      label: "Prazo desejado",
+      type: "text",
+      name: "Prazo desejado",
+      placeholder: "Ex.: 7 dias"
+    }
+
+  ],
 
 
-        grupo.appendChild(elemento);
+  "Projeto Integrador": [
 
-        container.appendChild(grupo);
+    {
+      label: "Curso",
+      type: "text",
+      name: "Curso",
+      placeholder: "Digite o seu curso"
+    },
+
+    {
+      label: "Tema do projeto",
+      type: "text",
+      name: "Tema do projeto",
+      placeholder: "Digite o tema"
+    },
+
+    {
+      label: "Orientações da atividade",
+      type: "textarea",
+      name: "Orientações da atividade",
+      placeholder: "Cole ou explique as orientações da atividade"
+    },
+
+    {
+      label: "Quantidade de páginas",
+      type: "number",
+      name: "Quantidade de páginas",
+      placeholder: "Digite a quantidade"
+    },
+
+    {
+      label: "Prazo desejado",
+      type: "text",
+      name: "Prazo desejado",
+      placeholder: "Ex.: 10 dias"
+    }
+
+  ]
+
+};
+
+
+function abrirFormulario(servico){
+
+  servicoSelecionado = servico;
+
+  document.getElementById("modalTitulo").textContent = servico;
+
+  const container =
+    document.getElementById("camposServico");
+
+  container.innerHTML = "";
+
+
+  const lista = campos[servico] || [];
+
+
+  lista.forEach(function(campo,index){
+
+    const grupo =
+      document.createElement("div");
+
+    grupo.className = "form-group";
+
+
+    const label =
+      document.createElement("label");
+
+    label.textContent = campo.label;
+
+    grupo.appendChild(label);
+
+
+    let elemento;
+
+
+    if(campo.type === "select"){
+
+      elemento =
+        document.createElement("select");
+
+      elemento.required = true;
+
+
+      const primeiraOpcao =
+        document.createElement("option");
+
+      primeiraOpcao.value = "";
+
+      primeiraOpcao.textContent =
+        "Selecione uma opção";
+
+      primeiraOpcao.disabled = true;
+
+      primeiraOpcao.selected = true;
+
+      elemento.appendChild(primeiraOpcao);
+
+
+      campo.options.forEach(function(opcao){
+
+        const option =
+          document.createElement("option");
+
+        option.value = opcao;
+
+        option.textContent = opcao;
+
+        elemento.appendChild(option);
 
       });
-
-
-      document
-        .getElementById("modal")
-        .classList.add("active");
-
-      document.body.style.overflow =
-        "hidden";
 
     }
 
 
-    /* =========================
-       FECHAR FORMULÁRIO
-    ========================= */
+    else if(campo.type === "textarea"){
 
-    function fecharFormulario() {
+      elemento =
+        document.createElement("textarea");
 
-      document
-        .getElementById("modal")
-        .classList.remove("active");
+      elemento.placeholder =
+        campo.placeholder || "";
 
-      document.body.style.overflow =
-        "";
+      elemento.required = true;
 
     }
 
 
-    /* =========================
-       FECHAR CLICANDO FORA
-    ========================= */
+    else{
 
-    document
-      .getElementById("modal")
-      .addEventListener("click", function(event) {
+      elemento =
+        document.createElement("input");
 
-        if (event.target === this) {
+      elemento.type =
+        campo.type || "text";
 
-          fecharFormulario();
+      elemento.placeholder =
+        campo.placeholder || "";
 
-        }
+      elemento.required = true;
 
-      });
-
-
-    /* =========================
-       ENVIO PARA WHATSAPP
-    ========================= */
-
-    document
-      .getElementById("formulario")
-      .addEventListener("submit", function(event) {
-
-        event.preventDefault();
+    }
 
 
-        let mensagem =
-          "Olá! Gostaria de solicitar informações sobre o serviço: "
-          + servicoSelecionado
-          + "\n\n";
+    elemento.name =
+      "servico_" + index;
+
+    elemento.dataset.label =
+      campo.name;
 
 
-        const camposServico =
-          document.querySelectorAll(
-            "#camposServico input, #camposServico select, #camposServico textarea"
-          );
+    grupo.appendChild(elemento);
+
+    container.appendChild(grupo);
+
+  });
 
 
-        camposServico.forEach(function(campo) {
+  document
+    .getElementById("modal")
+    .classList.add("active");
 
-          const valor =
-            campo.value.trim();
+  document.body.style.overflow =
+    "hidden";
 
-          if (valor !== "") {
-
-            mensagem +=
-              campo.dataset.label
-              + ": "
-              + valor
-              + "\n";
-
-          }
-
-        });
+}
 
 
-        const nome =
-          document
-            .getElementById("nome")
-            .value
-            .trim();
+function fecharFormulario(){
+
+  document
+    .getElementById("modal")
+    .classList.remove("active");
+
+  document.body.style.overflow =
+    "";
+
+}
 
 
-        const whatsapp =
-          document
-            .getElementById("whatsapp")
-            .value
-            .trim();
+document
+  .getElementById("modal")
+  .addEventListener("click",function(event){
+
+    if(event.target === this){
+
+      fecharFormulario();
+
+    }
+
+  });
 
 
-        const informacoes =
-          document
-            .getElementById("informacoes")
-            .value
-            .trim();
+document
+  .getElementById("formulario")
+  .addEventListener("submit",function(event){
 
+    event.preventDefault();
+
+
+    let mensagem =
+      "Olá! Gostaria de solicitar informações sobre o serviço: "
+      + servicoSelecionado
+      + "\n\n";
+
+
+    const camposServico =
+      document.querySelectorAll(
+        "#camposServico input, #camposServico select, #camposServico textarea"
+      );
+
+
+    camposServico.forEach(function(campo){
+
+      const valor =
+        campo.value.trim();
+
+      if(valor !== ""){
 
         mensagem +=
-          "\nNome: "
-          + nome;
+          campo.dataset.label
+          + ": "
+          + valor
+          + "\n";
+
+      }
+
+    });
 
 
-        mensagem +=
-          "\nWhatsApp: "
-          + whatsapp;
+    const nome =
+      document
+        .getElementById("nome")
+        .value
+        .trim();
 
 
-        if (informacoes !== "") {
-
-          mensagem +=
-            "\nInformações adicionais: "
-            + informacoes;
-
-        }
+    const whatsapp =
+      document
+        .getElementById("whatsapp")
+        .value
+        .trim();
 
 
-        const url =
-          "https://wa.me/"
-          + numeroGab
-          + "?text="
-          + encodeURIComponent(mensagem);
+    const informacoes =
+      document
+        .getElementById("informacoes")
+        .value
+        .trim();
 
 
-        window.open(
-          url,
-          "_blank"
-        );
-
-      });
+    mensagem +=
+      "\nNome: "
+      + nome;
 
 
-  </script>
+    mensagem +=
+      "\nWhatsApp: "
+      + whatsapp;
+
+
+    if(informacoes !== ""){
+
+      mensagem +=
+        "\nInformações adicionais: "
+        + informacoes;
+
+    }
+
+
+    const url =
+      "https://wa.me/"
+      + numeroGab
+      + "?text="
+      + encodeURIComponent(mensagem);
+
+
+    window.open(
+      url,
+      "_blank"
+    );
+
+  });
+
+</script>
 
 </body>
 </html>
