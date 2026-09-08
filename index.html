@@ -1,1294 +1,810 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-
 <meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>GAB Assessoria Acadêmica</title>
 
-<meta name="description"
-content="GAB Assessoria Acadêmica - apoio, orientação, revisão e formatação acadêmica.">
+<meta name="description" content="GAB Assessoria Acadêmica - apoio, orientação, revisão e formatação acadêmica.">
 
 <style>
 
 *{
-box-sizing:border-box;
-margin:0;
-padding:0;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 html{
-scroll-behavior:smooth;
+    scroll-behavior:smooth;
 }
 
 body{
-font-family:Arial,Helvetica,sans-serif;
-background:#f7f7f5;
-color:#172017;
-line-height:1.6;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f7faf8;
+    color:#30443a;
+    line-height:1.6;
 }
 
-a{
-text-decoration:none;
-color:inherit;
-}
-
-.container{
-width:min(1100px,92%);
-margin:auto;
-}
-
-/* CABEÇALHO */
+/* =========================
+   HEADER
+========================= */
 
 header{
-padding:22px 0;
-background:#fff;
-border-bottom:1px solid #e8e8e4;
+    background:#ffffff;
+    padding:18px 6%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 2px 12px rgba(0,0,0,.08);
 }
 
-.header-content{
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:20px;
+.logo{
+    font-size:25px;
+    font-weight:bold;
+    color:#315d48;
 }
 
-.brand{
-font-weight:800;
-color:#315d48;
-font-size:18px;
+.logo span{
+    display:block;
+    font-size:12px;
+    color:#718078;
+    font-weight:normal;
 }
 
-.tag{
-font-size:14px;
-color:#607064;
+nav a{
+    text-decoration:none;
+    color:#315d48;
+    margin-left:22px;
+    font-weight:bold;
 }
 
-/* HERO */
+nav a:hover{
+    color:#6c927d;
+}
+
+/* =========================
+   HERO
+========================= */
 
 .hero{
-min-height:520px;
-display:grid;
-grid-template-columns:1.1fr .9fr;
-align-items:center;
-gap:50px;
-padding:70px 0;
+    min-height:570px;
+    padding:80px 7%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    background:linear-gradient(
+        135deg,
+        #e5efe9,
+        #f7faf8
+    );
+}
+
+.hero-content{
+    max-width:900px;
 }
 
 .hero h1{
-font-size:clamp(40px,6vw,68px);
-line-height:1.02;
-color:#315d48;
-margin-bottom:22px;
-}
-
-.hero h1 span{
-display:block;
-color:#172017;
+    color:#315d48;
+    font-size:52px;
+    margin-bottom:20px;
 }
 
 .hero p{
-max-width:650px;
-font-size:18px;
-color:#5f685f;
-margin-bottom:28px;
+    max-width:700px;
+    margin:0 auto 30px;
+    font-size:19px;
+    color:#5f7168;
 }
 
 .btn{
-display:inline-block;
-border:0;
-border-radius:12px;
-padding:14px 22px;
-background:#315d48;
-color:#fff;
-font-weight:700;
-cursor:pointer;
-transition:.2s;
+    display:inline-block;
+    border:none;
+    background:#315d48;
+    color:white;
+    padding:15px 30px;
+    border-radius:30px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    text-decoration:none;
+    transition:.3s;
 }
 
 .btn:hover{
-transform:translateY(-2px);
-opacity:.93;
+    background:#47755d;
+    transform:translateY(-2px);
 }
 
-.hero-card{
-background:#fff;
-border:1px solid #e3e5e0;
-border-radius:28px;
-padding:35px;
-box-shadow:0 15px 40px rgba(0,0,0,.07);
-}
-
-.hero-card h3{
-color:#315d48;
-margin-bottom:12px;
-font-size:24px;
-}
-
-.hero-card p{
-font-size:15px;
-margin-bottom:20px;
-}
-
-.check-list{
-list-style:none;
-display:grid;
-gap:12px;
-}
-
-.check-list li:before{
-content:"✓";
-color:#315d48;
-font-weight:800;
-margin-right:9px;
-}
-
-/* SEÇÕES */
+/* =========================
+   SEÇÕES
+========================= */
 
 section{
-padding:65px 0;
+    padding:70px 7%;
 }
 
 .section-title{
-text-align:center;
-color:#315d48;
-font-size:32px;
-margin-bottom:10px;
+    text-align:center;
+    color:#315d48;
+    font-size:36px;
+    margin-bottom:12px;
 }
 
 .section-subtitle{
-text-align:center;
-color:#6b726b;
-max-width:700px;
-margin:0 auto 32px;
+    text-align:center;
+    color:#6b7a72;
+    max-width:750px;
+    margin:0 auto 40px;
 }
 
-/* SERVIÇOS */
+/* =========================
+   SERVIÇOS
+========================= */
+
+.services{
+    background:#ffffff;
+}
 
 .services-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:18px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+    max-width:1100px;
+    margin:auto;
 }
 
 .service{
-background:#fff;
-border:1px solid #e3e5e0;
-border-radius:20px;
-padding:25px;
-cursor:pointer;
-transition:.2s;
-box-shadow:0 8px 24px rgba(0,0,0,.04);
+    background:#f4f8f5;
+    padding:30px 24px;
+    border-radius:20px;
+    text-align:center;
+    cursor:pointer;
+    border:1px solid #e0ebe4;
+    transition:.3s;
 }
 
 .service:hover{
-transform:translateY(-4px);
-border-color:#315d48;
+    transform:translateY(-5px);
+    box-shadow:0 8px 25px rgba(49,93,72,.12);
+}
+
+.service-icon{
+    font-size:38px;
+    margin-bottom:12px;
 }
 
 .service h3{
-color:#315d48;
-font-size:20px;
-margin-bottom:8px;
+    color:#315d48;
+    margin-bottom:10px;
+    font-size:21px;
 }
 
 .service p{
-color:#687168;
-font-size:14px;
+    color:#6b7a72;
+    font-size:15px;
 }
 
-/* AJUDA */
+/* =========================
+   COMO PODEMOS AJUDAR
+========================= */
 
 .help{
-background:#eef2ed;
+    background:#e8f1eb;
 }
 
 .help-box{
-max-width:850px;
-margin:auto;
-background:#fff;
-border-radius:24px;
-padding:35px;
-border:1px solid #e0e5df;
+    max-width:1000px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
 }
 
-.help-box p{
-color:#626b63;
-margin-bottom:12px;
+.help-card{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,.05);
 }
 
-/* TRABALHOS */
+.help-card h3{
+    color:#315d48;
+    margin-bottom:15px;
+}
+
+.help-card p{
+    color:#66756d;
+    margin-bottom:15px;
+}
+
+.check-list{
+    list-style:none;
+}
+
+.check-list li{
+    margin-bottom:10px;
+    color:#52645a;
+}
+
+.check-list li::before{
+    content:"✓";
+    color:#315d48;
+    font-weight:bold;
+    margin-right:8px;
+}
+
+/* =========================
+   VÍDEO / TRABALHOS
+========================= */
 
 .portfolio{
-padding:70px 0 55px;
+    background:#f7faf8;
+    padding:70px 7%;
 }
 
-.portfolio-slider{
-position:relative;
-width:100%;
-max-width:760px;
-margin:28px auto 0;
-display:flex;
-align-items:center;
-justify-content:center;
+.video-box{
+    width:100%;
+    max-width:850px;
+    margin:0 auto;
+    background:#ffffff;
+    padding:10px;
+    border-radius:22px;
+    box-shadow:0 8px 25px rgba(0,0,0,.10);
 }
 
-.portfolio-card{
-width:100%;
-background:#fff;
-border:1px solid #e2e2df;
-border-radius:22px;
-padding:10px;
-box-shadow:0 8px 25px rgba(0,0,0,.08);
-overflow:hidden;
+.video-box video{
+    display:block;
+    width:100%;
+    max-height:520px;
+    border-radius:16px;
+    background:#000;
 }
 
-.portfolio-card img{
-display:block;
-width:100%;
-height:430px;
-object-fit:contain;
-border-radius:16px;
-background:#f2f3f0;
-}
-
-.portfolio-arrow{
-position:absolute;
-top:50%;
-transform:translateY(-50%);
-z-index:5;
-
-width:48px;
-height:48px;
-
-border:0;
-border-radius:50%;
-
-background:#fff;
-color:#315d48;
-
-font-size:38px;
-line-height:40px;
-
-cursor:pointer;
-
-box-shadow:0 5px 18px rgba(0,0,0,.18);
-}
-
-.portfolio-prev{
-left:8px;
-}
-
-.portfolio-next{
-right:8px;
-}
-
-.portfolio-dots{
-display:flex;
-justify-content:center;
-gap:8px;
-margin-top:18px;
-}
-
-.portfolio-dot{
-width:10px;
-height:10px;
-border-radius:50%;
-background:#d0d0d0;
-cursor:pointer;
-}
-
-.portfolio-dot.active{
-background:#315d48;
-}
-
-/* CHAMADA */
+/* =========================
+   CHAMADA FINAL
+========================= */
 
 .cta{
-text-align:center;
-background:#315d48;
-color:#fff;
-border-radius:28px;
-padding:45px 25px;
-margin:20px auto 70px;
+    background:#315d48;
+    color:white;
+    text-align:center;
+    padding:70px 7%;
 }
 
 .cta h2{
-font-size:30px;
-margin-bottom:10px;
+    font-size:36px;
+    margin-bottom:15px;
 }
 
 .cta p{
-margin-bottom:22px;
-opacity:.92;
+    max-width:700px;
+    margin:0 auto 25px;
+    color:#e8f1eb;
 }
 
-.btn-light{
-background:#fff;
-color:#315d48;
+.cta .btn{
+    background:white;
+    color:#315d48;
 }
 
-/* RODAPÉ */
+.cta .btn:hover{
+    background:#eef5f0;
+}
+
+/* =========================
+   FOOTER
+========================= */
 
 footer{
-text-align:center;
-padding:25px 15px;
-background:#fff;
-border-top:1px solid #e5e5e1;
-color:#6c736c;
-font-size:14px;
+    background:#243d30;
+    color:#dce8e1;
+    text-align:center;
+    padding:30px 20px;
 }
 
-/* WHATSAPP */
+footer p{
+    margin:5px 0;
+    font-size:14px;
+}
+
+/* =========================
+   WHATSAPP
+========================= */
 
 .whatsapp{
-position:fixed;
-right:15px;
-bottom:15px;
-z-index:50;
-
-background:#315d48;
-color:#fff;
-
-padding:14px 20px;
-
-border-radius:999px;
-
-font-weight:700;
-
-box-shadow:0 8px 25px rgba(0,0,0,.2);
+    position:fixed;
+    right:22px;
+    bottom:22px;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background:#25D366;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    font-size:30px;
+    box-shadow:0 5px 20px rgba(0,0,0,.2);
+    z-index:2000;
+    transition:.3s;
 }
 
-/* FORMULÁRIO */
+.whatsapp:hover{
+    transform:scale(1.08);
+}
+
+/* =========================
+   MODAL
+========================= */
 
 .modal{
-display:none;
-
-position:fixed;
-inset:0;
-
-z-index:100;
-
-background:rgba(0,0,0,.55);
-
-padding:20px;
-
-align-items:center;
-justify-content:center;
+    display:none;
+    position:fixed;
+    z-index:3000;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.55);
+    padding:20px;
+    overflow:auto;
 }
 
-.modal.show{
-display:flex;
-}
-
-.modal-box{
-width:min(560px,100%);
-
-max-height:90vh;
-
-overflow:auto;
-
-background:#fff;
-
-border-radius:24px;
-
-padding:30px;
-
-position:relative;
+.modal-content{
+    background:white;
+    max-width:520px;
+    margin:5% auto;
+    padding:32px;
+    border-radius:22px;
+    position:relative;
+    box-shadow:0 10px 35px rgba(0,0,0,.2);
 }
 
 .close{
-position:absolute;
-
-right:15px;
-top:10px;
-
-border:0;
-
-background:transparent;
-
-font-size:30px;
-
-cursor:pointer;
-
-color:#5d665e;
+    position:absolute;
+    right:20px;
+    top:12px;
+    font-size:30px;
+    cursor:pointer;
+    color:#6b7a72;
 }
 
-.modal-box h2{
-color:#315d48;
-margin-bottom:7px;
+.modal-content h2{
+    color:#315d48;
+    margin-bottom:8px;
 }
 
-.modal-subtitle{
-color:#687168;
-font-size:14px;
-margin-bottom:22px;
+.modal-content p{
+    color:#6b7a72;
+    margin-bottom:20px;
 }
 
-label{
-display:block;
-
-font-weight:700;
-
-margin:13px 0 6px;
-
-font-size:14px;
+.form-group{
+    margin-bottom:15px;
 }
 
-input,
-select,
-textarea{
-width:100%;
-
-border:1px solid #d8ddd7;
-
-border-radius:11px;
-
-padding:12px;
-
-font:inherit;
-
-outline:none;
+.form-group label{
+    display:block;
+    margin-bottom:6px;
+    font-weight:bold;
+    color:#41564b;
 }
 
-input:focus,
-select:focus,
-textarea:focus{
-border-color:#315d48;
+.form-group input,
+.form-group select,
+.form-group textarea{
+    width:100%;
+    padding:12px;
+    border:1px solid #d6e1db;
+    border-radius:10px;
+    font-family:inherit;
+    font-size:15px;
+    outline:none;
 }
 
-textarea{
-min-height:110px;
-resize:vertical;
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+    border-color:#6d967e;
 }
 
-.submit{
-width:100%;
-margin-top:20px;
+.form-group textarea{
+    min-height:100px;
+    resize:vertical;
 }
 
-/* CELULAR */
-
-@media(max-width:800px){
-
-.hero{
-grid-template-columns:1fr;
-padding:50px 0;
+.form-button{
+    width:100%;
+    margin-top:5px;
 }
 
-.services-grid{
-grid-template-columns:1fr 1fr;
+/* =========================
+   CELULAR
+========================= */
+
+@media(max-width:850px){
+
+    nav{
+        display:none;
+    }
+
+    .hero{
+        min-height:500px;
+        padding:60px 20px;
+    }
+
+    .hero h1{
+        font-size:38px;
+    }
+
+    .hero p{
+        font-size:17px;
+    }
+
+    .services-grid{
+        grid-template-columns:1fr;
+    }
+
+    .help-box{
+        grid-template-columns:1fr;
+    }
+
+    .section-title{
+        font-size:29px;
+    }
+
+    .cta h2{
+        font-size:29px;
+    }
 }
 
-}
+@media(max-width:500px){
 
-@media(max-width:560px){
+    section{
+        padding:55px 18px;
+    }
 
-.header-content{
-flex-direction:column;
-align-items:flex-start;
-}
+    .hero h1{
+        font-size:32px;
+    }
 
-.services-grid{
-grid-template-columns:1fr;
-}
+    .video-box{
+        padding:6px;
+        border-radius:16px;
+    }
 
-.hero-card{
-padding:25px;
-}
+    .video-box video{
+        border-radius:12px;
+    }
 
-.portfolio-card img{
-height:350px;
-}
+    .modal-content{
+        margin:10% auto;
+        padding:25px 20px;
+    }
 
-.portfolio-arrow{
-width:42px;
-height:42px;
-font-size:32px;
-}
-
+    .whatsapp{
+        width:55px;
+        height:55px;
+        right:15px;
+        bottom:15px;
+    }
 }
 
 </style>
-
 </head>
-
 
 <body>
 
-
-<div class="container">
-
+<!-- =========================
+     HEADER
+========================= -->
 
 <header>
 
-<div class="header-content">
+    <div class="logo">
+        GAB
+        <span>Assessoria Acadêmica</span>
+    </div>
 
-<div class="brand">
-GAB Assessoria Acadêmica
-</div>
-
-<div class="tag">
-Apoio e orientação acadêmica
-</div>
-
-</div>
+    <nav>
+        <a href="#inicio">Início</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#ajuda">Como podemos ajudar</a>
+        <a href="#trabalhos">Trabalhos</a>
+        <a href="#contato">Contato</a>
+    </nav>
 
 </header>
 
 
-<main>
+<!-- =========================
+     INÍCIO
+========================= -->
 
+<section class="hero" id="inicio">
 
-<!-- INÍCIO -->
+    <div class="hero-content">
 
-<section class="hero">
+        <h1>GAB Assessoria Acadêmica</h1>
 
-<div>
+        <p>
+            Apoio, orientação, revisão e formatação para você organizar
+            seus materiais acadêmicos com mais tranquilidade e segurança.
+        </p>
 
-<h1>
+        <button
+            class="btn"
+            onclick="abrirFormulario('Atendimento geral')">
+            Falar com a GAB
+        </button>
 
-GAB
-
-<span>
-Assessoria Acadêmica
-</span>
-
-</h1>
-
-<p>
-
-Apoio, orientação, revisão e formatação
-para você organizar suas atividades acadêmicas
-com mais tranquilidade.
-
-</p>
-
-<button
-class="btn"
-onclick="abrirFormulario('Atendimento geral')">
-
-Solicitar atendimento
-
-</button>
-
-</div>
-
-
-<div class="hero-card">
-
-<h3>
-Como podemos ajudar
-</h3>
-
-<p>
-
-Conte com orientação para organizar e revisar
-seus materiais acadêmicos de forma clara e responsável.
-
-</p>
-
-<ul class="check-list">
-
-<li>TCC e projetos</li>
-
-<li>Projetos multidisciplinares</li>
-
-<li>Relatórios de estágio</li>
-
-<li>Trabalhos acadêmicos</li>
-
-<li>Revisão e formatação</li>
-
-</ul>
-
-</div>
+    </div>
 
 </section>
 
 
-<!-- SERVIÇOS -->
+<!-- =========================
+     SERVIÇOS
+========================= -->
 
-<section>
+<section class="services" id="servicos">
 
-<h2 class="section-title">
-Serviços
-</h2>
+    <h2 class="section-title">
+        Nossos serviços
+    </h2>
 
-<p class="section-subtitle">
+    <p class="section-subtitle">
+        Escolha o serviço que você precisa e envie seus dados
+        para conversarmos sobre seu atendimento.
+    </p>
 
-Clique no serviço de seu interesse
-para solicitar atendimento.
+    <div class="services-grid">
 
-</p>
+        <div class="service"
+             onclick="abrirFormulario('TCC')">
 
+            <div class="service-icon">📚</div>
 
-<div class="services-grid">
+            <h3>TCC</h3>
 
+            <p>
+                Orientação, revisão, organização e formatação
+                conforme as necessidades acadêmicas.
+            </p>
 
-<div
-class="service"
-onclick="abrirFormulario('TCC')">
-
-<h3>
-TCC
-</h3>
-
-<p>
-Orientação, revisão, organização e
-formatação do trabalho.
-</p>
-
-</div>
+        </div>
 
 
-<div
-class="service"
-onclick="abrirFormulario('Projetos Multidisciplinares')">
+        <div class="service"
+             onclick="abrirFormulario('Projetos Multidisciplinares')">
 
-<h3>
-Projetos Multidisciplinares
-</h3>
+            <div class="service-icon">📋</div>
 
-<p>
-Auxílio na organização e revisão
-dos projetos acadêmicos.
-</p>
+            <h3>Projetos Multidisciplinares</h3>
 
-</div>
+            <p>
+                Apoio na organização, estruturação, revisão
+                e apresentação do projeto.
+            </p>
 
-
-<div
-class="service"
-onclick="abrirFormulario('Relatórios de Estágio')">
-
-<h3>
-Relatórios de Estágio
-</h3>
-
-<p>
-Organização, revisão e formatação
-dos relatórios.
-</p>
-
-</div>
+        </div>
 
 
-<div
-class="service"
-onclick="abrirFormulario('Trabalhos Acadêmicos')">
+        <div class="service"
+             onclick="abrirFormulario('Relatórios de Estágio')">
 
-<h3>
-Trabalhos Acadêmicos
-</h3>
+            <div class="service-icon">🎓</div>
 
-<p>
-Apoio na estrutura, revisão e
-apresentação do material.
-</p>
+            <h3>Relatórios de Estágio</h3>
 
-</div>
+            <p>
+                Organização, revisão e formatação dos relatórios
+                acadêmicos.
+            </p>
 
-
-<div
-class="service"
-onclick="abrirFormulario('Revisão e Formatação')">
-
-<h3>
-Revisão e Formatação
-</h3>
-
-<p>
-Revisão textual e organização
-visual do documento.
-</p>
-
-</div>
+        </div>
 
 
-<div
-class="service"
-onclick="abrirFormulario('Outro serviço')">
+        <div class="service"
+             onclick="abrirFormulario('Trabalhos Acadêmicos')">
 
-<h3>
-Outros Serviços
-</h3>
+            <div class="service-icon">📝</div>
 
-<p>
-Envie sua necessidade para
-verificarmos como ajudar.
-</p>
+            <h3>Trabalhos Acadêmicos</h3>
 
-</div>
+            <p>
+                Apoio na organização, revisão e formatação
+                dos materiais acadêmicos.
+            </p>
+
+        </div>
 
 
-</div>
+        <div class="service"
+             onclick="abrirFormulario('Apresentações')">
+
+            <div class="service-icon">💻</div>
+
+            <h3>Apresentações</h3>
+
+            <p>
+                Organização visual e revisão de apresentações
+                acadêmicas.
+            </p>
+
+        </div>
+
+
+        <div class="service"
+             onclick="abrirFormulario('Outros serviços')">
+
+            <div class="service-icon">📌</div>
+
+            <h3>Outros serviços</h3>
+
+            <p>
+                Não encontrou o que procura?
+                Fale com a GAB e explique sua necessidade.
+            </p>
+
+        </div>
+
+    </div>
 
 </section>
 
 
-<!-- ATENDIMENTO -->
+<!-- =========================
+     COMO PODEMOS AJUDAR
+========================= -->
 
-<section class="help">
+<section class="help" id="ajuda">
 
-<div class="help-box">
+    <h2 class="section-title">
+        Como podemos ajudar
+    </h2>
 
-<h2 class="section-title">
-Atendimento personalizado
-</h2>
-
-<p>
-
-Cada solicitação é analisada individualmente.
-Envie as informações do seu trabalho e explique
-o que você precisa.
-
-</p>
-
-<p>
-
-O formulário encaminha sua solicitação
-diretamente para o WhatsApp da GAB.
-
-</p>
-
-<button
-class="btn"
-onclick="abrirFormulario('Atendimento geral')">
-
-Falar com a GAB
-
-</button>
-
-</div>
-
-</section>
+    <p class="section-subtitle">
+        Conte com acompanhamento para organizar seus materiais
+        e entender melhor cada etapa do seu trabalho acadêmico.
+    </p>
 
 
-<!-- TRABALHOS JÁ REALIZADOS -->
+    <div class="help-box">
 
-<section class="portfolio">
+        <div class="help-card">
 
-<h2 class="section-title">
-Trabalhos já realizados
-</h2>
+            <h3>📖 Apoio acadêmico</h3>
 
-<p class="section-subtitle">
+            <p>
+                Orientação para estruturar e organizar seus materiais
+                de maneira clara e adequada.
+            </p>
 
-Confira alguns exemplos de materiais e resultados
-acompanhados pela GAB Assessoria Acadêmica.
+            <ul class="check-list">
 
-</p>
+                <li>Organização do conteúdo</li>
 
+                <li>Revisão textual</li>
 
-<div class="portfolio-slider">
+                <li>Formatação acadêmica</li>
 
+                <li>Orientação para apresentação</li>
 
-<button
-class="portfolio-arrow portfolio-prev"
-onclick="mudarTrabalho(-1)"
-aria-label="Trabalho anterior">
+            </ul>
 
-‹
-
-</button>
+        </div>
 
 
-<div class="portfolio-card">
+        <div class="help-card">
 
-<img
-id="trabalhoImagem"
-src="imagens/trabalho1.jpg"
-alt="Exemplo de trabalho realizado">
+            <h3>✅ Organização e revisão</h3>
 
-</div>
+            <p>
+                Ajuda para revisar e deixar seus materiais mais
+                organizados antes da entrega.
+            </p>
 
+            <ul class="check-list">
 
-<button
-class="portfolio-arrow portfolio-next"
-onclick="mudarTrabalho(1)"
-aria-label="Próximo trabalho">
+                <li>Revisão e ajustes</li>
 
-›
+                <li>Organização das informações</li>
 
-</button>
+                <li>Padronização</li>
 
+                <li>Conferência final</li>
 
-</div>
+            </ul>
 
+        </div>
 
-<div class="portfolio-dots">
-
-
-<span
-class="portfolio-dot active"
-onclick="irParaTrabalho(0)">
-</span>
-
-
-<span
-class="portfolio-dot"
-onclick="irParaTrabalho(1)">
-</span>
-
-
-<span
-class="portfolio-dot"
-onclick="irParaTrabalho(2)">
-</span>
-
-
-<span
-class="portfolio-dot"
-onclick="irParaTrabalho(3)">
-</span>
-
-
-<span
-class="portfolio-dot"
-onclick="irParaTrabalho(4)">
-</span>
-
-
-<span
-class="portfolio-dot"
-onclick="irParaTrabalho(5)">
-</span>
-
-
-<span
-class="portfolio-dot"
-onclick="irParaTrabalho(6)">
-</span>
-
-
-</div>
+    </div>
 
 </section>
 
 
-<!-- FINAL -->
+<!-- =========================
+     TRABALHOS / VÍDEO
+========================= -->
 
-<section class="cta">
+<section class="portfolio" id="trabalhos">
 
-<h2>
-Precisa de orientação?
-</h2>
+    <h2 class="section-title">
+        Venha fazer seus trabalhos acadêmicos com a GAB!
+    </h2>
 
-<p>
+    <p class="section-subtitle">
+        Confira um pouco do nosso trabalho e conheça os serviços
+        de apoio, orientação, revisão e organização acadêmica.
+    </p>
 
-Envie sua solicitação e explique
-o que você precisa.
 
-</p>
+    <div class="video-box">
 
-<button
-class="btn btn-light"
-onclick="abrirFormulario('Atendimento geral')">
+        <video
+            controls
+            playsinline
+            preload="metadata">
 
-Solicitar atendimento
+            <source
+                src="WhatsApp Video 2026-09-07 at 15.02.56.mp4"
+                type="video/mp4">
 
-</button>
+            Seu navegador não suporta vídeos.
+
+        </video>
+
+    </div>
 
 </section>
 
 
-</main>
+<!-- =========================
+     CTA
+========================= -->
 
-</div>
+<section class="cta" id="contato">
 
+    <h2>
+        Precisa de ajuda com seu material acadêmico?
+    </h2>
+
+    <p>
+        Entre em contato com a GAB e explique o que você precisa.
+        Vamos conversar sobre a melhor forma de orientar seu atendimento.
+    </p>
+
+    <button
+        class="btn"
+        onclick="abrirFormulario('Atendimento geral')">
+
+        Falar com a GAB
+
+    </button>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
-© 2026 GAB Assessoria Acadêmica
-
-</footer>
-
-
-<!-- BOTÃO WHATSAPP -->
-
-<a
-class="whatsapp"
-href="https://wa.me/5551989924617"
-target="_blank"
-rel="noopener">
-
-WhatsApp
-
-</a>
-
-
-<!-- FORMULÁRIO -->
-
-<div
-class="modal"
-id="modal">
-
-
-<div class="modal-box">
-
-
-<button
-class="close"
-onclick="fecharFormulario()"
-aria-label="Fechar">
-
-×
-
-</button>
-
-
-<h2>
-Solicitar atendimento
-</h2>
-
-
-<p class="modal-subtitle">
-
-Preencha os dados abaixo.
-Ao enviar, sua solicitação será encaminhada
-pelo WhatsApp.
-
-</p>
-
-
-<form id="formulario">
-
-
-<label for="servico">
-Serviço
-</label>
-
-
-<select id="servico" required>
-
-<option value="">
-Selecione
-</option>
-
-<option>
-TCC
-</option>
-
-<option>
-Projetos Multidisciplinares
-</option>
-
-<option>
-Relatórios de Estágio
-</option>
-
-<option>
-Trabalhos Acadêmicos
-</option>
-
-<option>
-Revisão e Formatação
-</option>
-
-<option>
-Outro serviço
-</option>
-
-<option>
-Atendimento geral
-</option>
-
-</select>
-
-
-<label for="nome">
-Nome
-</label>
-
-<input
-id="nome"
-type="text"
-placeholder="Seu nome"
-required>
-
-
-<label for="faculdade">
-Instituição de ensino
-</label>
-
-<input
-id="faculdade"
-type="text"
-placeholder="Nome da instituição">
-
-
-<label for="telefone">
-Seu WhatsApp
-</label>
-
-<input
-id="telefone"
-type="tel"
-placeholder="(00) 00000-0000">
-
-
-<label for="mensagem">
-Como podemos ajudar?
-</label>
-
-<textarea
-id="mensagem"
-placeholder="Explique brevemente o que você precisa."
-required>
-</textarea>
-
-
-<button
-class="btn submit"
-type="submit">
-
-Enviar pelo WhatsApp
-
-</button>
-
-
-</form>
-
-</div>
-
-</div>
-
-
-<script>
-
-
-/* SLIDE */
-
-const trabalhos = [
-
-"imagens/trabalho1.jpg",
-
-"imagens/trabalho2.jpg",
-
-"imagens/trabalho3.jpg",
-
-"imagens/trabalho4.jpg",
-
-"imagens/trabalho5.jpg",
-
-"imagens/trabalho6.jpg",
-
-"imagens/trabalho7.jpg"
-
-];
-
-
-let trabalhoAtual = 0;
-
-
-function mostrarTrabalho(){
-
-document.getElementById("trabalhoImagem").src =
-trabalhos[trabalhoAtual];
-
-
-const dots =
-document.querySelectorAll(".portfolio-dot");
-
-
-dots.forEach(function(dot,indice){
-
-dot.classList.toggle(
-"active",
-indice === trabalhoAtual
-);
-
-});
-
-}
-
-
-function mudarTrabalho(direcao){
-
-trabalhoAtual += direcao;
-
-
-if(trabalhoAtual >= trabalhos.length){
-
-trabalhoAtual = 0;
-
-}
-
-
-if(trabalhoAtual < 0){
-
-trabalhoAtual =
-trabalhos.length - 1;
-
-}
-
-
-mostrarTrabalho();
-
-}
-
-
-function irParaTrabalho(indice){
-
-trabalhoAtual = indice;
-
-mostrarTrabalho();
-
-}
-
-
-/* TROCA AUTOMÁTICA */
-
-setInterval(function(){
-
-mudarTrabalho(1);
-
-},5000);
-
-
-/* FORMULÁRIO */
-
-function abrirFormulario(servico){
-
-document
-.getElementById("modal")
-.classList.add("show");
-
-
-if(servico){
-
-const select =
-document.getElementById("servico");
-
-const opcoes =
-[...select.options].map(
-option => option.value
-);
-
-
-if(opcoes.includes(servico)){
-
-select.value = servico;
-
-}
-
-}
-
-}
-
-
-function fecharFormulario(){
-
-document
-.getElementById("modal")
-.classList.remove("show");
-
-}
-
-
-document
-.getElementById("modal")
-.addEventListener(
-"click",
-function(e){
-
-if(e.target === this){
-
-fecharFormulario();
-
-}
-
-}
-);
-
-
-/* ENVIO WHATSAPP */
-
-document
-.getElementById("formulario")
-.addEventListener(
-"submit",
-function(e){
-
-e.preventDefault();
-
-
-const servico =
-document.getElementById("servico").value;
-
-
-const nome =
-document.getElementById("nome").value;
-
-
-const faculdade =
-document.getElementById("faculdade").value;
-
-
-const telefone =
-document.getElementById("telefone").value;
-
-
-const mensagem =
-document.getElementById("mensagem").value;
-
-
-const texto =
-
-"Olá, GAB Assessoria Acadêmica!%0A%0A" +
-
-"Gostaria de solicitar atendimento.%0A" +
-
-"Serviço: " +
-encodeURIComponent(servico) +
-"%0A" +
-
-"Nome: " +
-encodeURIComponent(nome) +
-"%0A" +
-
-"Instituição: " +
-encodeURIComponent(faculdade) +
-"%0A" +
-
-"Meu WhatsApp: " +
-encodeURIComponent(telefone) +
-"%0A" +
-
-"Mensagem: " +
-encodeURIComponent(mensagem);
-
-
-const numeroGab =
-"5551989924617";
-
-
-const link =
-"https://wa.me/" +
-numeroGab +
-"?text=" +
-texto;
-
-
-window.open(
-link,
-"_blank"
-);
-
-
-fecharFormulario();
-
-}
-);
-
-</script>
-
-
-</body>
-
-</html>
+    <p>
+        <strong>GAB Assessoria Acadêmica</strong>
+    </p>
+
+    <p>
+        Apoio • Orientação • Revisão • Formatação
+    </p>
+
+    <p>
