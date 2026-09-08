@@ -3,808 +3,824 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>GAB Assessoria Acadêmica</title>
-
 <meta name="description" content="GAB Assessoria Acadêmica - apoio, orientação, revisão e formatação acadêmica.">
 
 <style>
-
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
-html{
-    scroll-behavior:smooth;
+:root{
+  --verde:#315d48;
+  --verde-claro:#eaf1ed;
+  --verde-botao:#28d76b;
+  --texto:#171b19;
+  --cinza:#6d746f;
+  --borda:#e3e7e4;
 }
 
 body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:#f7faf8;
-    color:#30443a;
-    line-height:1.6;
+  font-family:Arial,Helvetica,sans-serif;
+  background:#fbfcfb;
+  color:var(--texto);
+  line-height:1.5;
 }
 
-/* =========================
-   HEADER
-========================= */
-
-header{
-    background:#ffffff;
-    padding:18px 6%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    position:sticky;
-    top:0;
-    z-index:1000;
-    box-shadow:0 2px 12px rgba(0,0,0,.08);
+button,input,textarea{
+  font:inherit;
 }
 
-.logo{
-    font-size:25px;
-    font-weight:bold;
-    color:#315d48;
-}
-
-.logo span{
-    display:block;
-    font-size:12px;
-    color:#718078;
-    font-weight:normal;
-}
-
-nav a{
-    text-decoration:none;
-    color:#315d48;
-    margin-left:22px;
-    font-weight:bold;
-}
-
-nav a:hover{
-    color:#6c927d;
-}
-
-/* =========================
-   HERO
-========================= */
-
+/* TOPO */
 .hero{
-    min-height:570px;
-    padding:80px 7%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    background:linear-gradient(
-        135deg,
-        #e5efe9,
-        #f7faf8
-    );
+  min-height:690px;
+  padding:28px 22px 70px;
+  background:
+    linear-gradient(rgba(250,252,250,.80),rgba(250,252,250,.94)),
+    url("https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=1600&q=85")
+    center/cover no-repeat;
 }
 
-.hero-content{
-    max-width:900px;
+.hero-inner{
+  max-width:1050px;
+  margin:auto;
+}
+
+.label{
+  display:inline-block;
+  background:rgba(234,241,237,.95);
+  color:var(--verde);
+  padding:9px 18px;
+  border-radius:30px;
+  font-size:18px;
+  font-weight:700;
+  margin-bottom:42px;
 }
 
 .hero h1{
-    color:#315d48;
-    font-size:52px;
-    margin-bottom:20px;
+  font-family:Georgia,serif;
+  font-size:clamp(48px,8vw,82px);
+  line-height:.98;
+  letter-spacing:-2px;
+  margin-bottom:36px;
 }
 
 .hero p{
-    max-width:700px;
-    margin:0 auto 30px;
-    font-size:19px;
-    color:#5f7168;
+  max-width:700px;
+  font-size:clamp(21px,3vw,30px);
+  line-height:1.35;
 }
 
-.btn{
-    display:inline-block;
-    border:none;
-    background:#315d48;
-    color:white;
-    padding:15px 30px;
-    border-radius:30px;
-    font-size:16px;
-    font-weight:bold;
-    cursor:pointer;
-    text-decoration:none;
-    transition:.3s;
-}
-
-.btn:hover{
-    background:#47755d;
-    transform:translateY(-2px);
-}
-
-/* =========================
-   SEÇÕES
-========================= */
-
-section{
-    padding:70px 7%;
-}
-
-.section-title{
-    text-align:center;
-    color:#315d48;
-    font-size:36px;
-    margin-bottom:12px;
-}
-
-.section-subtitle{
-    text-align:center;
-    color:#6b7a72;
-    max-width:750px;
-    margin:0 auto 40px;
-}
-
-/* =========================
-   SERVIÇOS
-========================= */
-
+/* SERVIÇOS */
 .services{
-    background:#ffffff;
+  width:min(1050px,calc(100% - 32px));
+  margin:0 auto 70px;
 }
 
-.services-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:22px;
-    max-width:1100px;
-    margin:auto;
+.services h2,
+.about h2{
+  font-family:Georgia,serif;
+  font-size:clamp(42px,7vw,62px);
+  margin-bottom:8px;
 }
 
-.service{
-    background:#f4f8f5;
-    padding:30px 24px;
-    border-radius:20px;
-    text-align:center;
-    cursor:pointer;
-    border:1px solid #e0ebe4;
-    transition:.3s;
+.sub{
+  font-size:20px;
+  color:var(--cinza);
+  margin-bottom:28px;
 }
 
-.service:hover{
-    transform:translateY(-5px);
-    box-shadow:0 8px 25px rgba(49,93,72,.12);
+.list{
+  display:grid;
+  gap:18px;
 }
 
-.service-icon{
-    font-size:38px;
-    margin-bottom:12px;
+.card{
+  width:100%;
+  border:1px solid var(--borda);
+  background:white;
+  border-radius:24px;
+  padding:24px 28px;
+  display:grid;
+  grid-template-columns:92px 1fr 30px;
+  align-items:center;
+  gap:20px;
+  text-align:left;
+  cursor:pointer;
+  transition:.2s;
 }
 
-.service h3{
-    color:#315d48;
-    margin-bottom:10px;
-    font-size:21px;
+.card:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 28px rgba(30,70,50,.09);
 }
 
-.service p{
-    color:#6b7a72;
-    font-size:15px;
+.icon{
+  width:76px;
+  height:76px;
+  border-radius:22px;
+  background:var(--verde-claro);
+  color:var(--verde);
+  display:grid;
+  place-items:center;
+  font-size:36px;
 }
 
-/* =========================
-   COMO PODEMOS AJUDAR
-========================= */
-
-.help{
-    background:#e8f1eb;
+.card h3{
+  font-family:Georgia,serif;
+  font-size:29px;
+  line-height:1.1;
+  margin-bottom:7px;
 }
 
-.help-box{
-    max-width:1000px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:25px;
+.card p{
+  font-size:20px;
+  color:var(--cinza);
 }
 
-.help-card{
-    background:white;
-    padding:30px;
-    border-radius:20px;
-    box-shadow:0 5px 20px rgba(0,0,0,.05);
+.arrow{
+  font-size:42px;
+  color:#68726c;
 }
 
-.help-card h3{
-    color:#315d48;
-    margin-bottom:15px;
+/* SOBRE */
+.about{
+  background:var(--verde-claro);
+  padding:65px 22px;
+  text-align:center;
 }
 
-.help-card p{
-    color:#66756d;
-    margin-bottom:15px;
+.about h2{
+  color:var(--verde);
 }
 
-.check-list{
-    list-style:none;
+.about p{
+  max-width:780px;
+  margin:auto;
+  color:#536158;
+  font-size:19px;
 }
 
-.check-list li{
-    margin-bottom:10px;
-    color:#52645a;
-}
-
-.check-list li::before{
-    content:"✓";
-    color:#315d48;
-    font-weight:bold;
-    margin-right:8px;
-}
-
-/* =========================
-   VÍDEO / TRABALHOS
-========================= */
-
-.portfolio{
-    background:#f7faf8;
-    padding:70px 7%;
-}
-
-.video-box{
-    width:100%;
-    max-width:850px;
-    margin:0 auto;
-    background:#ffffff;
-    padding:10px;
-    border-radius:22px;
-    box-shadow:0 8px 25px rgba(0,0,0,.10);
-}
-
-.video-box video{
-    display:block;
-    width:100%;
-    max-height:520px;
-    border-radius:16px;
-    background:#000;
-}
-
-/* =========================
-   CHAMADA FINAL
-========================= */
-
-.cta{
-    background:#315d48;
-    color:white;
-    text-align:center;
-    padding:70px 7%;
-}
-
-.cta h2{
-    font-size:36px;
-    margin-bottom:15px;
-}
-
-.cta p{
-    max-width:700px;
-    margin:0 auto 25px;
-    color:#e8f1eb;
-}
-
-.cta .btn{
-    background:white;
-    color:#315d48;
-}
-
-.cta .btn:hover{
-    background:#eef5f0;
-}
-
-/* =========================
-   FOOTER
-========================= */
-
+/* RODAPÉ */
 footer{
-    background:#243d30;
-    color:#dce8e1;
-    text-align:center;
-    padding:30px 20px;
+  background:#214e3c;
+  color:white;
+  text-align:center;
+  padding:24px;
 }
 
-footer p{
-    margin:5px 0;
-    font-size:14px;
+/* WHATSAPP */
+.wa{
+  position:fixed;
+  right:20px;
+  bottom:22px;
+  z-index:20;
+  background:var(--verde-botao);
+  color:white;
+  text-decoration:none;
+  border-radius:50px;
+  padding:17px 27px;
+  font-weight:700;
+  font-size:19px;
+  box-shadow:0 9px 25px rgba(0,0,0,.22);
 }
 
-/* =========================
-   WHATSAPP
-========================= */
-
-.whatsapp{
-    position:fixed;
-    right:22px;
-    bottom:22px;
-    width:60px;
-    height:60px;
-    border-radius:50%;
-    background:#25D366;
-    color:white;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-decoration:none;
-    font-size:30px;
-    box-shadow:0 5px 20px rgba(0,0,0,.2);
-    z-index:2000;
-    transition:.3s;
-}
-
-.whatsapp:hover{
-    transform:scale(1.08);
-}
-
-/* =========================
-   MODAL
-========================= */
-
+/* MODAL */
 .modal{
-    display:none;
-    position:fixed;
-    z-index:3000;
-    left:0;
-    top:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,.55);
-    padding:20px;
-    overflow:auto;
+  position:fixed;
+  inset:0;
+  z-index:50;
+  display:none;
+  align-items:flex-end;
+  background:rgba(0,0,0,.48);
 }
 
-.modal-content{
-    background:white;
-    max-width:520px;
-    margin:5% auto;
-    padding:32px;
-    border-radius:22px;
-    position:relative;
-    box-shadow:0 10px 35px rgba(0,0,0,.2);
+.modal.open{
+  display:flex;
+}
+
+.box{
+  width:min(760px,100%);
+  max-height:94vh;
+  overflow-y:auto;
+  background:white;
+  border-radius:30px 30px 0 0;
+  padding:18px 32px 28px;
+  position:relative;
+}
+
+.handle{
+  width:52px;
+  height:8px;
+  border-radius:10px;
+  background:#d8dcd9;
+  margin:0 auto 35px;
 }
 
 .close{
-    position:absolute;
-    right:20px;
-    top:12px;
-    font-size:30px;
-    cursor:pointer;
-    color:#6b7a72;
+  position:absolute;
+  top:16px;
+  right:20px;
+  border:0;
+  background:#eef1ef;
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  font-size:25px;
+  cursor:pointer;
 }
 
-.modal-content h2{
-    color:#315d48;
-    margin-bottom:8px;
+.head{
+  display:flex;
+  align-items:center;
+  gap:22px;
+  margin-bottom:24px;
 }
 
-.modal-content p{
-    color:#6b7a72;
-    margin-bottom:20px;
+.head .icon{
+  flex:0 0 88px;
+  width:88px;
+  height:88px;
 }
 
-.form-group{
-    margin-bottom:15px;
+.head h2{
+  font-family:Georgia,serif;
+  font-size:clamp(34px,7vw,50px);
+  line-height:1.05;
 }
 
-.form-group label{
-    display:block;
-    margin-bottom:6px;
-    font-weight:bold;
-    color:#41564b;
+.head p{
+  color:var(--cinza);
+  font-size:21px;
+  margin-top:6px;
 }
 
-.form-group input,
-.form-group select,
-.form-group textarea{
-    width:100%;
-    padding:12px;
-    border:1px solid #d6e1db;
-    border-radius:10px;
-    font-family:inherit;
-    font-size:15px;
-    outline:none;
+.desc{
+  font-size:20px;
+  margin:22px 0 25px;
 }
 
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus{
-    border-color:#6d967e;
+.group{
+  margin-bottom:20px;
 }
 
-.form-group textarea{
-    min-height:100px;
-    resize:vertical;
+label{
+  display:block;
+  font-weight:700;
+  color:#686f6a;
+  font-size:18px;
+  margin-bottom:8px;
 }
 
-.form-button{
-    width:100%;
-    margin-top:5px;
+input,
+textarea{
+  width:100%;
+  border:1px solid #e1e5e1;
+  background:#f4f6f3;
+  border-radius:19px;
+  padding:17px 20px;
+  outline:none;
 }
 
-/* =========================
-   CELULAR
-========================= */
-
-@media(max-width:850px){
-
-    nav{
-        display:none;
-    }
-
-    .hero{
-        min-height:500px;
-        padding:60px 20px;
-    }
-
-    .hero h1{
-        font-size:38px;
-    }
-
-    .hero p{
-        font-size:17px;
-    }
-
-    .services-grid{
-        grid-template-columns:1fr;
-    }
-
-    .help-box{
-        grid-template-columns:1fr;
-    }
-
-    .section-title{
-        font-size:29px;
-    }
-
-    .cta h2{
-        font-size:29px;
-    }
+input{
+  height:60px;
 }
 
-@media(max-width:500px){
-
-    section{
-        padding:55px 18px;
-    }
-
-    .hero h1{
-        font-size:32px;
-    }
-
-    .video-box{
-        padding:6px;
-        border-radius:16px;
-    }
-
-    .video-box video{
-        border-radius:12px;
-    }
-
-    .modal-content{
-        margin:10% auto;
-        padding:25px 20px;
-    }
-
-    .whatsapp{
-        width:55px;
-        height:55px;
-        right:15px;
-        bottom:15px;
-    }
+textarea{
+  min-height:130px;
+  resize:vertical;
 }
 
+input:focus,
+textarea:focus{
+  border-color:#9eb6a8;
+}
+
+.send{
+  width:100%;
+  border:0;
+  background:var(--verde-botao);
+  color:white;
+  border-radius:45px;
+  padding:19px;
+  font-weight:800;
+  font-size:21px;
+  cursor:pointer;
+}
+
+@media(max-width:650px){
+
+  .hero{
+    min-height:630px;
+    padding:24px 18px 60px;
+  }
+
+  .services{
+    width:calc(100% - 30px);
+  }
+
+  .card{
+    grid-template-columns:78px 1fr 20px;
+    gap:14px;
+    padding:21px 17px;
+  }
+
+  .icon{
+    width:70px;
+    height:70px;
+  }
+
+  .card h3{
+    font-size:25px;
+  }
+
+  .card p{
+    font-size:18px;
+  }
+
+  .arrow{
+    font-size:34px;
+  }
+
+  .wa{
+    right:16px;
+    bottom:17px;
+    padding:15px 22px;
+    font-size:17px;
+  }
+
+  .box{
+    padding:16px 18px 24px;
+  }
+}
 </style>
 </head>
 
 <body>
 
-<!-- =========================
-     HEADER
-========================= -->
+<!-- INÍCIO -->
+<section class="hero">
 
-<header>
+  <div class="hero-inner">
 
-    <div class="logo">
-        GAB
-        <span>Assessoria Acadêmica</span>
+    <div class="label">
+      ⌁ &nbsp; Assessoria acadêmica
     </div>
 
-    <nav>
-        <a href="#inicio">Início</a>
-        <a href="#servicos">Serviços</a>
-        <a href="#ajuda">Como podemos ajudar</a>
-        <a href="#trabalhos">Trabalhos</a>
-        <a href="#contato">Contato</a>
-    </nav>
-
-</header>
-
-
-<!-- =========================
-     INÍCIO
-========================= -->
-
-<section class="hero" id="inicio">
-
-    <div class="hero-content">
-
-        <h1>GAB Assessoria Acadêmica</h1>
-
-        <p>
-            Apoio, orientação, revisão e formatação para você organizar
-            seus materiais acadêmicos com mais tranquilidade e segurança.
-        </p>
-
-        <button
-            class="btn"
-            onclick="abrirFormulario('Atendimento geral')">
-            Falar com a GAB
-        </button>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     SERVIÇOS
-========================= -->
-
-<section class="services" id="servicos">
-
-    <h2 class="section-title">
-        Nossos serviços
-    </h2>
-
-    <p class="section-subtitle">
-        Escolha o serviço que você precisa e envie seus dados
-        para conversarmos sobre seu atendimento.
-    </p>
-
-    <div class="services-grid">
-
-        <div class="service"
-             onclick="abrirFormulario('TCC')">
-
-            <div class="service-icon">📚</div>
-
-            <h3>TCC</h3>
-
-            <p>
-                Orientação, revisão, organização e formatação
-                conforme as necessidades acadêmicas.
-            </p>
-
-        </div>
-
-
-        <div class="service"
-             onclick="abrirFormulario('Projetos Multidisciplinares')">
-
-            <div class="service-icon">📋</div>
-
-            <h3>Projetos Multidisciplinares</h3>
-
-            <p>
-                Apoio na organização, estruturação, revisão
-                e apresentação do projeto.
-            </p>
-
-        </div>
-
-
-        <div class="service"
-             onclick="abrirFormulario('Relatórios de Estágio')">
-
-            <div class="service-icon">🎓</div>
-
-            <h3>Relatórios de Estágio</h3>
-
-            <p>
-                Organização, revisão e formatação dos relatórios
-                acadêmicos.
-            </p>
-
-        </div>
-
-
-        <div class="service"
-             onclick="abrirFormulario('Trabalhos Acadêmicos')">
-
-            <div class="service-icon">📝</div>
-
-            <h3>Trabalhos Acadêmicos</h3>
-
-            <p>
-                Apoio na organização, revisão e formatação
-                dos materiais acadêmicos.
-            </p>
-
-        </div>
-
-
-        <div class="service"
-             onclick="abrirFormulario('Apresentações')">
-
-            <div class="service-icon">💻</div>
-
-            <h3>Apresentações</h3>
-
-            <p>
-                Organização visual e revisão de apresentações
-                acadêmicas.
-            </p>
-
-        </div>
-
-
-        <div class="service"
-             onclick="abrirFormulario('Outros serviços')">
-
-            <div class="service-icon">📌</div>
-
-            <h3>Outros serviços</h3>
-
-            <p>
-                Não encontrou o que procura?
-                Fale com a GAB e explique sua necessidade.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     COMO PODEMOS AJUDAR
-========================= -->
-
-<section class="help" id="ajuda">
-
-    <h2 class="section-title">
-        Como podemos ajudar
-    </h2>
-
-    <p class="section-subtitle">
-        Conte com acompanhamento para organizar seus materiais
-        e entender melhor cada etapa do seu trabalho acadêmico.
-    </p>
-
-
-    <div class="help-box">
-
-        <div class="help-card">
-
-            <h3>📖 Apoio acadêmico</h3>
-
-            <p>
-                Orientação para estruturar e organizar seus materiais
-                de maneira clara e adequada.
-            </p>
-
-            <ul class="check-list">
-
-                <li>Organização do conteúdo</li>
-
-                <li>Revisão textual</li>
-
-                <li>Formatação acadêmica</li>
-
-                <li>Orientação para apresentação</li>
-
-            </ul>
-
-        </div>
-
-
-        <div class="help-card">
-
-            <h3>✅ Organização e revisão</h3>
-
-            <p>
-                Ajuda para revisar e deixar seus materiais mais
-                organizados antes da entrega.
-            </p>
-
-            <ul class="check-list">
-
-                <li>Revisão e ajustes</li>
-
-                <li>Organização das informações</li>
-
-                <li>Padronização</li>
-
-                <li>Conferência final</li>
-
-            </ul>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     TRABALHOS / VÍDEO
-========================= -->
-
-<section class="portfolio" id="trabalhos">
-
-    <h2 class="section-title">
-        Venha fazer seus trabalhos acadêmicos com a GAB!
-    </h2>
-
-    <p class="section-subtitle">
-        Confira um pouco do nosso trabalho e conheça os serviços
-        de apoio, orientação, revisão e organização acadêmica.
-    </p>
-
-
-    <div class="video-box">
-
-        <video
-            controls
-            playsinline
-            preload="metadata">
-
-            <source
-                src="WhatsApp Video 2026-09-07 at 15.02.56.mp4"
-                type="video/mp4">
-
-            Seu navegador não suporta vídeos.
-
-        </video>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     CTA
-========================= -->
-
-<section class="cta" id="contato">
-
-    <h2>
-        Precisa de ajuda com seu material acadêmico?
-    </h2>
+    <h1>
+      GAB<br>
+      Assessoria<br>
+      Acadêmica
+    </h1>
 
     <p>
-        Entre em contato com a GAB e explique o que você precisa.
-        Vamos conversar sobre a melhor forma de orientar seu atendimento.
+      Apoio profissional para você organizar e concluir
+      seus trabalhos acadêmicos com tranquilidade e excelência.
     </p>
 
-    <button
-        class="btn"
-        onclick="abrirFormulario('Atendimento geral')">
+  </div>
 
-        Falar com a GAB
+</section>
+
+
+<!-- SERVIÇOS -->
+<section class="services">
+
+  <h2>Serviços</h2>
+
+  <p class="sub">
+    Toque em um serviço para solicitar um orçamento
+  </p>
+
+  <div class="list">
+
+
+    <!-- TCC -->
+    <button class="card"
+      onclick="abrir(
+      'TCC',
+      'Trabalho de Conclusão de Curso',
+      'Orientação, organização, revisão e formatação do seu TCC conforme as orientações acadêmicas.',
+      '🎓',
+      ['Curso','Tema do TCC','Quantidade de páginas','Prazo desejado','Instituição']
+      )">
+
+      <div class="icon">🎓</div>
+
+      <div>
+        <h3>TCC</h3>
+        <p>Trabalho de Conclusão de Curso</p>
+      </div>
+
+      <div class="arrow">›</div>
 
     </button>
 
+
+    <!-- PROJETOS -->
+    <button class="card"
+      onclick="abrir(
+      'Projetos Multidisciplinares',
+      'Integração entre áreas',
+      'Apoio na organização e desenvolvimento do seu projeto multidisciplinar.',
+      '📚',
+      ['Curso','Tema do projeto','Disciplinas envolvidas','Quantidade de páginas','Prazo desejado']
+      )">
+
+      <div class="icon">📚</div>
+
+      <div>
+        <h3>Projetos Multidisciplinares</h3>
+        <p>Integração entre áreas</p>
+      </div>
+
+      <div class="arrow">›</div>
+
+    </button>
+
+
+    <!-- ESTÁGIO -->
+    <button class="card"
+      onclick="abrir(
+      'Relatórios de Estágio',
+      'Completos e formatados',
+      'Orientação para organização, revisão e formatação do relatório de estágio.',
+      '💼',
+      ['Curso','Tipo de estágio','Local do estágio','Carga horária','Prazo desejado']
+      )">
+
+      <div class="icon">💼</div>
+
+      <div>
+        <h3>Relatórios de Estágio</h3>
+        <p>Completos e formatados</p>
+      </div>
+
+      <div class="arrow">›</div>
+
+    </button>
+
+
+    <!-- FORMATAÇÃO -->
+    <button class="card"
+      onclick="abrir(
+      'Formatação de Documentos',
+      'Normas ABNT / APA',
+      'Formatação acadêmica de documentos conforme as normas solicitadas.',
+      '📄',
+      ['Tipo de documento','Norma exigida','Quantidade de páginas','Prazo desejado']
+      )">
+
+      <div class="icon">📄</div>
+
+      <div>
+        <h3>Formatação de Documentos</h3>
+        <p>Normas ABNT / APA</p>
+      </div>
+
+      <div class="arrow">›</div>
+
+    </button>
+
+
+    <!-- TRABALHOS -->
+    <button class="card"
+      onclick="abrir(
+      'Trabalhos Acadêmicos',
+      'Apoio e revisão',
+      'Apoio na organização, revisão, estruturação e formatação de trabalhos acadêmicos.',
+      '📝',
+      ['Curso','Tipo de trabalho','Tema','Quantidade de páginas','Prazo desejado']
+      )">
+
+      <div class="icon">📝</div>
+
+      <div>
+        <h3>Trabalhos Acadêmicos</h3>
+        <p>Apoio, revisão e organização</p>
+      </div>
+
+      <div class="arrow">›</div>
+
+    </button>
+
+
+    <!-- PROJETO INTEGRADOR -->
+    <button class="card"
+      onclick="abrir(
+      'Projeto Integrador',
+      'Aplicação prática do curso',
+      'Orientação na organização e apresentação do projeto integrador.',
+      '🧩',
+      ['Curso','Tema do projeto','Orientações da atividade','Quantidade de páginas','Prazo desejado']
+      )">
+
+      <div class="icon">🧩</div>
+
+      <div>
+        <h3>Projeto Integrador</h3>
+        <p>Aplicação prática do curso</p>
+      </div>
+
+      <div class="arrow">›</div>
+
+    </button>
+
+  </div>
+
 </section>
 
 
-<!-- =========================
-     FOOTER
-========================= -->
+<!-- SOBRE -->
+<section class="about">
+
+  <h2>Conte com a GAB</h2>
+
+  <p>
+    Atendimento para orientação, revisão, organização e formatação
+    de materiais acadêmicos, respeitando as orientações da sua instituição.
+  </p>
+
+</section>
+
 
 <footer>
+  © 2026 GAB Assessoria Acadêmica
+</footer>
 
-    <p>
-        <strong>GAB Assessoria Acadêmica</strong>
+
+<!-- BOTÃO WHATSAPP -->
+<a
+  class="wa"
+  href="https://wa.me/5551989924617"
+  target="_blank"
+  rel="noopener">
+  ☎️ WhatsApp
+</a>
+
+
+<!-- FORMULÁRIO -->
+<div
+  class="modal"
+  id="modal"
+  onclick="fora(event)">
+
+  <div class="box">
+
+    <div class="handle"></div>
+
+    <button
+      class="close"
+      onclick="fechar()">
+      ×
+    </button>
+
+
+    <div class="head">
+
+      <div
+        class="icon"
+        id="modalIcon">
+        🎓
+      </div>
+
+      <div>
+
+        <h2 id="modalTitle">
+          TCC
+        </h2>
+
+        <p id="modalSubtitle">
+          Trabalho de Conclusão de Curso
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <p
+      class="desc"
+      id="modalDescription">
     </p>
 
-    <p>
-        Apoio • Orientação • Revisão • Formatação
-    </p>
 
-    <p>
+    <form
+      id="formulario"
+      onsubmit="enviar(event)">
+
+      <div id="campos"></div>
+
+      <div class="group">
+
+        <label>
+          Seu nome
+        </label>
+
+        <input
+          id="nome"
+          type="text"
+          placeholder="Digite seu nome"
+          required>
+
+      </div>
+
+
+      <div class="group">
+
+        <label>
+          WhatsApp para contato
+        </label>
+
+        <input
+          id="whatsapp"
+          type="tel"
+          placeholder="(00) 00000-0000"
+          required>
+
+      </div>
+
+
+      <div class="group">
+
+        <label>
+          Informações adicionais
+        </label>
+
+        <textarea
+          id="mensagem"
+          placeholder="Conte mais detalhes sobre seu trabalho..."
+          required>
+        </textarea>
+
+      </div>
+
+
+      <button
+        class="send"
+        type="submit">
+
+        ◉ &nbsp; Enviar pelo WhatsApp
+
+      </button>
+
+    </form>
+
+  </div>
+
+</div>
+
+
+<script>
+
+let servicoAtual = "";
+
+let camposAtuais = [];
+
+
+function abrir(
+  titulo,
+  subtitulo,
+  descricao,
+  icone,
+  campos
+){
+
+  servicoAtual = titulo;
+
+  camposAtuais = campos;
+
+
+  document.getElementById("modalTitle")
+    .textContent = titulo;
+
+  document.getElementById("modalSubtitle")
+    .textContent = subtitulo;
+
+  document.getElementById("modalDescription")
+    .textContent = descricao;
+
+  document.getElementById("modalIcon")
+    .textContent = icone;
+
+
+  let area = document.getElementById("campos");
+
+  area.innerHTML = "";
+
+
+  campos.forEach(function(campo,index){
+
+    let div = document.createElement("div");
+
+    div.className = "group";
+
+    div.innerHTML = `
+      <label>${campo}</label>
+      <input
+        type="text"
+        id="campo${index}"
+        placeholder="${campo}"
+        required>
+    `;
+
+    area.appendChild(div);
+
+  });
+
+
+  document.getElementById("modal")
+    .classList.add("open");
+
+  document.body.style.overflow = "hidden";
+
+}
+
+
+function fechar(){
+
+  document.getElementById("modal")
+    .classList.remove("open");
+
+  document.body.style.overflow = "";
+
+}
+
+
+function fora(event){
+
+  if(event.target.id === "modal"){
+    fechar();
+  }
+
+}
+
+
+function enviar(event){
+
+  event.preventDefault();
+
+
+  let nome =
+    document.getElementById("nome").value.trim();
+
+  let whatsapp =
+    document.getElementById("whatsapp").value.trim();
+
+  let mensagem =
+    document.getElementById("mensagem").value.trim();
+
+
+  let texto =
+    "Olá, GAB Assessoria!\\n\\n" +
+    "Gostaria de solicitar um orçamento.\\n\\n" +
+    "SERVIÇO: " + servicoAtual + "\\n\\n" +
+    "NOME: " + nome + "\\n" +
+    "WHATSAPP: " + whatsapp + "\\n";
+
+
+  camposAtuais.forEach(function(campo,index){
+
+    let valor =
+      document.getElementById("campo"+index).value.trim();
+
+    texto +=
+      campo.toUpperCase() +
+      ": " +
+      valor +
+      "\\n";
+
+  });
+
+
+  texto +=
+    "\\nINFORMAÇÕES ADICIONAIS:\\n" +
+    mensagem;
+
+
+  window.open(
+    "https://wa.me/5551989924617?text=" +
+    encodeURIComponent(texto),
+    "_blank"
+  );
+
+}
+
+
+document.addEventListener(
+  "keydown",
+  function(event){
+
+    if(event.key === "Escape"){
+      fechar();
+    }
+
+  }
+);
+
+</script>
+
+</body>
+</html>
