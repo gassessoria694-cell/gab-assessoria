@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>GAB Assessoria</title>
+
+  <meta name="description" content="GAB Assessoria - apoio, orientação, revisão e formatação acadêmica">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: #f5f7fb;
+      color: #222;
+    }
+
+    header {
+      background: #ffffff;
+      padding: 18px 7%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: 800;
+      color: #172554;
+    }
+
+    .logo span {
+      color: #2563eb;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      margin-left: 25px;
+      font-weight: 600;
+    }
+
+    .hero {
+      min-height: 500px;
+      padding: 80px 7%;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, #172554, #2563eb);
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 700px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    .button {
+      display: inline-block;
+      background: white;
+      color: #172554;
+      padding: 15px 25px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    section {
+      padding: 70px 7%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      font-size: 34px;
+      color: #172554;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #666;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .service {
+      background: white;
+      padding: 28px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+      transition: 0.2s;
+    }
+
+    .service:hover {
+      transform: translateY(-4px);
+    }
+
+    .service h3 {
+      color: #172554;
+      margin-bottom: 12px;
+    }
+
+    .service p {
+      color: #666;
+      line-height: 1.5;
+    }
+
+    .order-area {
+      background: white;
+    }
+
+    .order-box {
+      max-width: 750px;
+      margin: auto;
+      background: #f8fafc;
+      padding: 35px;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #d1d5db;
+      border-radius: 7px;
+      font-size: 15px;
+      background: white;
+    }
+
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .submit {
+      width: 100%;
+      background: #2563eb;
+      color: white;
+      border: none;
+      padding: 15px;
+      border-radius: 8px;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .submit:hover {
+      background: #1d4ed8;
+    }
+
+    footer {
+      background: #172554;
+      color: white;
+      text-align: center;
+      padding: 30px;
+    }
+
+    @media (max-width: 700px) {
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav a {
+        margin: 0 7px;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">GAB <span>Assessoria</span></div>
+
+  <nav>
+    <a href="#inicio">Início</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#pedido">Fazer pedido</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero" id="inicio">
+  <div class="hero-content">
+
+    <h1>Venha fazer seus trabalhos acadêmicos com a GAB Assessoria</h1>
+
+    <p>
+      Apoiamos e potencializamos seus resultados com serviços de
+      orientação, revisão e formatação acadêmica.
+    </p>
+
+    <a class="button" href="#pedido">
+      Fazer meu pedido
+    </a>
+
+  </div>
+</section>
+
+<section id="servicos">
+
+  <div class="section-title">
+    <h2>Trabalhos que realizamos</h2>
+    <p>Confira alguns dos serviços disponíveis.</p>
+  </div>
+
+  <div class="services">
+
+    <div class="service">
+      <h3>TCC</h3>
+      <p>Trabalhos de conclusão de curso conforme as necessidades do aluno.</p>
+    </div>
+
+    <div class="service">
+      <h3>Estágio completo</h3>
+      <p>Auxílio na organização e elaboração dos documentos acadêmicos do estágio.</p>
+    </div>
+
+    <div class="service">
+      <h3>Projeto Multidisciplinar</h3>
+      <p>Projetos acadêmicos desenvolvidos de acordo com a proposta da instituição.</p>
+    </div>
+
+    <div class="service">
+      <h3>Projeto Integrador</h3>
+      <p>Organização e desenvolvimento do projeto conforme as orientações acadêmicas.</p>
+    </div>
+
+    <div class="service">
+      <h3>Portfólio</h3>
+      <p>Organização e elaboração do portfólio acadêmico.</p>
+    </div>
+
+    <div class="service">
+      <h3>Projeto de Extensão</h3>
+      <p>Auxílio na elaboração e organização do projeto de extensão.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="order-area" id="pedido">
+
+  <div class="section-title">
+    <h2>Cadastro de Pedido</h2>
+    <p>Preencha seus dados e selecione o trabalho que deseja solicitar.</p>
+  </div>
+
+  <div class="order-box">
+
+    <form id="pedidoForm">
+
+      <div class="form-group">
+        <label for="nome">Nome completo</label>
+        <input
+          type="text"
+          id="nome"
+          placeholder="Digite seu nome completo"
+          required>
+      </div>
+
+      <div class="form-group">
+        <label for="telefone">Telefone / WhatsApp</label>
+        <input
+          type="tel"
+          id="telefone"
+          placeholder="(00) 00000-0000"
+          required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">E-mail</label>
+        <input
+          type="email"
+          id="email"
+          placeholder="seuemail@email.com"
+          required>
+      </div>
+
+      <div class="form-group">
+        <label for="instituicao">Instituição de ensino</label>
+        <input
+          type="text"
+          id="instituicao"
+          placeholder="Ex.: UNIBF">
+      </div>
+
+      <div class="form-group">
+        <label for="curso">Curso</label>
+        <input
+          type="text"
+          id="curso"
+          placeholder="Digite seu curso">
+      </div>
+
+      <div class="form-group">
+        <label for="trabalho">Selecione o trabalho</label>
+
+        <select id="trabalho" required>
+          <option value="">Selecione uma opção</option>
+          <option value="TCC">TCC</option>
+          <option value="Estágio completo">Estágio completo</option>
+          <option value="Projeto Multidisciplinar">Projeto Multidisciplinar</option>
+          <option value="Projeto Integrador">Projeto Integrador</option>
+          <option value="Portfólio">Portfólio</option>
+          <option value="Projeto de Extensão">Projeto de Extensão</option>
+        </select>
+
+      </div>
+
+      <div class="form-group">
+        <label for="prazo">Prazo desejado</label>
+        <input type="date" id="prazo">
+      </div>
+
+      <div class="form-group">
+        <label for="observacoes">Observações</label>
+
+        <textarea
+          id="observacoes"
+          placeholder="Digite aqui informações importantes sobre seu pedido">
+        </textarea>
+
+      </div>
+
+      <button class="submit" type="submit">
+        Enviar pedido
+      </button>
+
+    </form>
+
+  </div>
+
+</section>
+
+</main>
+
+<footer>
+  <p>GAB Assessoria — Apoiamos e potencializamos seus resultados.</p>
+  <p>Atendimento pelo WhatsApp: (51) 98992-4617</p>
+</footer>
+
+<script>
+
+document.getElementById("pedidoForm").addEventListener("submit", function(event) {
+
+  event.preventDefault();
+
+  const nome = document.getElementById("nome").value;
+  const telefone = document.getElementById("telefone").value;
+  const trabalho = document.getElementById("trabalho").value;
+
+  const mensagem =
+    "Olá, GAB Assessoria!%0A%0A" +
+    "Nome: " + nome + "%0A" +
+    "Telefone: " + telefone + "%0A" +
+    "Trabalho solicitado: " + trabalho;
+
+  window.open(
+    "https://wa.me/5551989924617?text=" + mensagem,
+    "_blank"
+  );
+
+});
+
+</script>
+
+</body>
+</html>
