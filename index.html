@@ -1,294 +1,164 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gab Assessoria Acadêmica</title>
-<style>
-:root {
-  --azul: #073764;
-  --azul2: #1262a3;
-  --dourado: #e8b64c;
-  --claro: #eef6fd;
-  --texto: #16324f;
-}
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  color: var(--texto);
-}
-header {
-  background: var(--azul);
-  color: white;
-  padding: 20px 5%;
-}
-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 15px;
-  flex-wrap: wrap;
-}
-.logo { font-size: 25px; font-weight: bold; }
-.logo span { color: var(--dourado); }
-nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  margin: 5px;
-}
-.botao {
-  display: inline-block;
-  background: var(--azul2);
-  color: white;
-  padding: 13px 20px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: bold;
-}
-.botao:hover { background: #084a7d; }
-.hero {
-  background: linear-gradient(120deg, #f4f9ff, #dcecf9);
-  padding: 65px 7%;
-  text-align: center;
-}
-.hero h1 {
-  color: var(--azul);
-  font-size: clamp(30px, 5vw, 48px);
-  margin-bottom: 15px;
-}
-.hero p {
-  font-size: 18px;
-  line-height: 1.7;
-  max-width: 750px;
-  margin: 0 auto 25px;
-}
-section { padding: 45px 6%; }
-.titulo { text-align: center; margin-bottom: 30px; }
-.titulo h2 { color: var(--azul); font-size: 30px; }
-.titulo p { color: #5d7185; }
-.servicos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 20px;
-  max-width: 1150px;
-  margin: auto;
-}
-.card {
-  border: 1px solid #dce7f2;
-  border-radius: 16px;
-  padding: 25px;
-  box-shadow: 0 5px 18px #123b5b0d;
-  background: white;
-}
-.icone {
-  font-size: 32px;
-  background: var(--claro);
-  width: 60px;
-  height: 60px;
-  display: grid;
-  place-items: center;
-  border-radius: 15px;
-}
-.card h3 { color: var(--azul); }
-.card p { line-height: 1.6; color: #5d7185; }
-.preco {
-  font-size: 23px;
-  color: var(--azul2);
-  font-weight: bold;
-  margin: 15px 0;
-}
-.estagios {
-  background: var(--claro);
-  border: 1px solid #d1e4f5;
-  border-radius: 18px;
-  padding: 30px;
-  max-width: 1150px;
-  margin: 25px auto 0;
-  text-align: center;
-}
-.estagios h3 { color: var(--azul); font-size: 24px; }
-.diferenciais {
-  background: #f8fbfe;
-  text-align: center;
-}
-.diferenciais-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 25px;
-  max-width: 1000px;
-  margin: auto;
-}
-.diferenciais-grid h3 { color: var(--azul); }
-footer {
-  background: var(--azul);
-  color: white;
-  padding: 35px 6%;
-  text-align: center;
-}
-footer p { line-height: 1.8; }
-footer a { color: var(--dourado); }
-@media(max-width:600px) {
-  nav { flex-direction: column; }
-  .hero { padding: 45px 6%; }
-  section { padding: 35px 5%; }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gab Assessoria Acadêmica</title>
+    <!-- Importa a biblioteca do Supabase -->
+    <script src="https://jsdelivr.net"></script>
+    <style>
+        :root {
+            --azul: #073763;
+            --azul2: #1262a3;
+            --dourado: #e8b64c;
+            --claro: #eef6fd;
+            --texto: #16324f;
+        }
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: Arial, sans-serif; margin: 0; background-color: var(--claro); color: var(--texto); padding-bottom: 50px; }
+        header { background: var(--azul); color: white; padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .logo { font-size: 24px; font-weight: bold; }
+        .logo span { color: var(--dourado); }
+        .container { max-width: 900px; margin: 30px auto; padding: 0 20px; }
+        .box { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 30px; }
+        .hidden { display: none; }
+        input { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 6px; font-size: 15px; }
+        button { background-color: var(--azul2); color: white; border: none; padding: 12px 20px; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 15px; transition: 0.3s; }
+        button:hover { background-color: var(--azul); }
+        .btn-whatsapp { background-color: #25D366; }
+        .btn-whatsapp:hover { background-color: #128C7E; }
+        .item-trabalho { border-bottom: 1px solid #eef2f5; padding: 20px 0; display: flex; justify-content: space-between; align-items: center; }
+        .item-trabalho:last-child { border: none; }
+        .preco { font-size: 20px; font-weight: bold; color: var(--azul); margin-right: 15px; }
+    </style>
 </head>
 <body>
 
-<header>
-  <nav>
-    <div>
-      <div class="logo">GAB <span>ASSESSORIA</span></div>
-      <small>ASSESSORIA ACADÊMICA</small>
-    </div>
-    <div>
-      <a href="#inicio">Início</a>
-      <a href="#servicos">Serviços</a>
-      <a href="#sobre">Sobre</a>
-      <a href="#contato">Contato</a>
-    </div>
-    <a class="botao" href="https://wa.me/555189924617"
-       target="_blank" rel="noopener">Fale conosco</a>
-  </nav>
-</header>
+    <header>
+        <div class="logo">Gab Assessoria <span>Acadêmica</span></div>
+    </header>
 
-<main>
-  <div class="hero" id="inicio">
-    <h1>Seu próximo passo acadêmico começa aqui!</h1>
-    <p>
-      A Gab Assessoria Acadêmica oferece suporte e orientação
-      para sua jornada acadêmica. Conheça nossos serviços,
-      consulte valores e entre em contato conosco.
-    </p>
-    <a class="botao"
-       href="https://wa.me/555189924617"
-       target="_blank" rel="noopener">
-       Solicitar orçamento pelo WhatsApp
-    </a>
-  </div>
+    <div class="container">
+        <!-- TELA 1: CADASTRO E LOGIN DO ALUNO -->
+        <div id="tela-autenticacao" class="box">
+            <h2>Área de Acesso do Aluno</h2>
+            <p>Cadastre-se ou faça login para gerenciar seus pedidos.</p>
+            
+            <input type="email" id="auth-email" placeholder="Seu E-mail">
+            <input type="password" id="auth-senha" placeholder="Sua Senha">
+            
+            <div id="campos-cadastro">
+                <input type="text" id="aluno-nome" placeholder="Seu Nome Completo">
+                <input type="text" id="aluno-whatsapp" placeholder="Seu WhatsApp com DDD (Ex: 11999999999)">
+            </div>
 
-  <section id="servicos">
-    <div class="titulo">
-      <h2>Nossos serviços</h2>
-      <p>Escolha o serviço desejado e consulte as informações.</p>
+            <button onclick="realizarCadastro()" class="btn-whatsapp" id="btn-cadastrar">Criar Conta e Entrar</button>
+            <button onclick="realizarLogin()">Apenas Fazer Login</button>
+        </div>
+
+        <!-- TELA 2: AMBIENTE LOGADO (FAZER PEDIDOS) -->
+        <div id="ambiente-aluno" class="box hidden">
+            <h2>Bem-vindo(a), <span id="nome-exibicao">Aluno</span>!</h2>
+            <button onclick="deslogar()" style="background-color: #dc3545; padding: 6px 12px; font-size: 13px;">Sair da Conta</button>
+            
+            <hr style="margin: 25px 0; border: 0; border-top: 1px solid #eee;">
+
+            <h3>Trabalhos Acadêmicos e Projetos Disponíveis</h3>
+            <p>Selecione o serviço desejado. Nossa equipe entrará em contato via WhatsApp imediatamente para combinar os detalhes.</p>
+            <div id="lista-trabalhos">Carregando serviços e preços...</div>
+        </div>
     </div>
 
-    <div class="servicos">
-      <article class="card">
-        <div class="icone">📚</div>
-        <h3>Projeto Multidisciplinar</h3>
-        <p>Consulte os temas disponíveis:</p>
-        <ul>
-          <li>Desafios da Educação</li>
-          <li>Currículo e Tecnologias Educacionais</li>
-          <li>Gerenciamento Escolar</li>
-          <li>Estudos Metodológicos</li>
-          <li>Metodologias de Ensino</li>
-          <li>Projeto Final</li>
-        </ul>
-        <div class="preco">R$ 50,00</div>
-        <a class="botao"
-           href="https://wa.me/555189924617?text=Olá!%20Quero%20consultar%20sobre%20Projeto%20Multidisciplinar."
-           target="_blank" rel="noopener">Consultar</a>
-      </article>
+    <!-- CONFIGURAÇÃO DA CONEXÃO E LÓGICA -->
+    <script>
+        // Substitua os dados abaixo pelos seus dados reais do Supabase
+        const SUPABASE_URL = "https://supabase.co"; 
+const SUPABASE_KEY = "sb_publishable_cSiIw3AQSE6gkYcA-9Dfjg_f9OoS75M
+        const supabase = @supabase.supabaseJS.createClient(SUPABASE_URL, SUPABASE_KEY);
+        let usuarioLogadoId = null;
 
-      <article class="card">
-        <div class="icone">🎓</div>
-        <h3>TCC UniBF</h3>
-        <p>Consulte informações e condições do serviço.</p>
-        <div class="preco">R$ 100,00</div>
-        <a class="botao"
-           href="https://wa.me/555189924617?text=Olá!%20Quero%20consultar%20sobre%20TCC%20UniBF."
-           target="_blank" rel="noopener">Consultar</a>
-      </article>
+        async function realizarCadastro() {
+            const email = document.getElementById('auth-email').value;
+            const password = document.getElementById('auth-senha').value;
+            const nome = document.getElementById('aluno-nome').value;
+            const whatsapp = document.getElementById('aluno-whatsapp').value;
 
-      <article class="card">
-        <div class="icone">🎓</div>
-        <h3>TCC Uninter</h3>
-        <p>Informações sobre atendimento e orçamento.</p>
-        <div class="preco">R$ 350,00</div>
-        <a class="botao"
-           href="https://wa.me/555189924617?text=Olá!%20Quero%20consultar%20sobre%20TCC%20Uninter."
-           target="_blank" rel="noopener">Consultar</a>
-      </article>
+            if(!email || !password || !nome || !whatsapp) { alert("Preencha todos os campos para o cadastro!"); return; }
 
-      <article class="card">
-        <div class="icone">🎓</div>
-        <h3>TCC Anhanguera</h3>
-        <p>Consulte as condições para sua instituição.</p>
-        <div class="preco">R$ 450,00</div>
-        <a class="botao"
-           href="https://wa.me/555189924617?text=Olá!%20Quero%20consultar%20sobre%20TCC%20Anhanguera."
-           target="_blank" rel="noopener">Consultar</a>
-      </article>
+            const { data: authData, error: authError } = await supabase.auth.signUp({ email, password });
+            if (authError) { alert("Erro ao criar conta: " + authError.message); return; }
 
-      <article class="card">
-        <div class="icone">🎓</div>
-        <h3>TCC Uniasselvi</h3>
-        <p>Consulte detalhes e disponibilidade.</p>
-        <div class="preco">R$ 600,00</div>
-        <a class="botao"
-           href="https://wa.me/555189924617?text=Olá!%20Quero%20consultar%20sobre%20TCC%20Uniasselvi."
-           target="_blank" rel="noopener">Consultar</a>
-      </article>
+            if(authData.user) {
+                const { error: perfilError } = await supabase.from('alunos').insert([
+                    { id: authData.user.id, nome: nome, email: email, whatsapp: whatsapp }
+                ]);
+                if (perfilError) { console.error(perfilError); }
+                verificarSessao();
+            }
+        }
 
-      <article class="card">
-        <div class="icone">🗂️</div>
-        <h3>Outros serviços</h3>
-        <p>
-          Projeto Integrador, Práticas de Ensino, Projeto de
-          Extensão, relatórios de estágio, formatação e outros
-          serviços acadêmicos.
-        </p>
-        <div class="preco">Sob consulta</div>
-        <a class="botao"
-           href="https://wa.me/555189924617?text=Olá!%20Quero%20consultar%20outros%20serviços."
-           target="_blank" rel="noopener">Consultar</a>
-      </article>
-    </div>
+        async function realizarLogin() {
+            const email = document.getElementById('auth-email').value;
+            const password = document.getElementById('auth-senha').value;
+            const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+            if (error) { alert("Erro ao entrar: " + error.message); return; }
+            verificarSessao();
+        }
 
-    <div class="estagios">
-      <div class="icone" style="margin:auto">📋</div>
-      <h3>Estágios completos</h3>
-      <p>
-        Educação Infantil, Ensino Fundamental, Gestão,
-        EJA e Educação Inclusiva.
-      </p>
-      <p><strong>Consulte valores e disponibilidade pelo WhatsApp.</strong></p>
-      <a class="botao"
-         href="https://wa.me/555189924617?text=Olá!%20Quero%20consultar%20valores%20e%20disponibilidade%20para%20estágios."
-         target="_blank" rel="noopener">Consultar valores</a>
-    </div>
-  </section>
+        async function verificarSessao() {
+            const { data: { session } } = await supabase.auth.getSession();
+            if (session) {
+                usuarioLogadoId = session.user.id;
+                document.getElementById('tela-autenticacao').classList.add('hidden');
+                document.getElementById('ambiente-aluno').classList.remove('hidden');
+                const { data: aluno } = await supabase.from('alunos').select('nome').eq('id', usuarioLogadoId).single();
+                if(aluno) { document.getElementById('nome-exibicao').innerText = aluno.nome; }
+                carregarServicos();
+            } else {
+                document.getElementById('tela-autenticacao').classList.remove('hidden');
+                document.getElementById('ambiente-aluno').classList.add('hidden');
+            }
+        }
 
-  <section class="diferenciais" id="sobre">
-    <div class="titulo">
-      <h2>Conte com a Gab</h2>
-      <p>Seu apoio para concluir sua jornada acadêmica.</p>
-    </div>
-    <div class="diferenciais-grid">
-      <div><div class="icone" style="margin:auto">✓</div><h3>Atendimento personalizado</h3><p>Contato direto para tirar dúvidas.</p></div>
-      <div><div class="icone" style="margin:auto">◷</div><h3>Organização</h3><p>Alinhamento de informações e prazos.</p></div>
-      <div><div class="icone" style="margin:auto">◆</div><h3>Privacidade</h3><p>Cuidado com as informações compartilhadas.</p></div>
-      <div><div class="icone" style="margin:auto">☎</div><h3>Fale conosco</h3><p>Consulte valores pelo WhatsApp.</p></div>
-    </div>
-  </section>
-</main>
+        async function carregarServicos() {
+            const { data: temas, error } = await supabase.from('temas_disponiveis').select('*').eq('status', 'Disponível');
+            if (error) { document.getElementById('lista-trabalhos').innerText = "Erro ao carregar serviços."; return; }
 
-<footer id="contato">
-  <div class="logo">GAB <span>ASSESSORIA</span></div>
-  <p>Seu apoio para concluir sua jornada acadêmica.</p>
-  <p>WhatsApp: <a href="https://wa.me/555189924617"
-     target="_blank" rel="noopener">51989924617</a></p>
-  <p>Para consultar valores de estágios ou de qualquer serviço,
-     entre em contato pelo WhatsApp.</p>
-  <small>Gab Assessoria Acadêmica</small>
-</footer>
+            let html = "";
+            temas.forEach(item => {
+                html += `
+                    <div class="item-trabalho">
+                        <div>
+                            <strong>${item.titulo}</strong> <span style="color:#666; font-size:13px;">(${item.instituicao})</span><br>
+                            <span style="font-size: 14px; color: var(--azul2);">Categoria: ${item.categoria}</span>
+                        </div>
+                        <div style="display: flex; align-items: center;">
+                            <span class="preco">R$ ${item.valor}</span>
+                            <button onclick="solicitarTrabalho('${item.id}', '${item.titulo}')">Fazer Pedido</button>
+                        </div>
+                    </div>
+                `;
+            });
+            document.getElementById('lista-trabalhos').innerHTML = html || "<p>Nenhum serviço disponível no momento.</p>";
+        }
 
+        async function solicitarTrabalho(temaId, tituloTema) {
+            const { error } = await supabase.from('pedidos').insert([
+                { aluno_id: usuarioLogadoId, tema_id: temaId, status_pedido: 'Pendente' }
+            ]);
+            if (error) {
+                alert("Erro ao enviar pedido: " + error.message);
+            } else {
+                alert(Sucesso! Seu pedido para "${tituloTema}" foi enviado. Entraremos em contato pelo seu WhatsApp cadastrado em breve!);
+            }
+        }
+
+        async function deslogar() {
+            await supabase.auth.signOut();
+            verificarSessao();
+        }
+
+        verificarSessao();
+    </script>
 </body>
-</html>
