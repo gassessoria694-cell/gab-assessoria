@@ -1,186 +1,105 @@
-[10:48, 16/10/2026] Gab Apoio Acadêmico: <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gab Assessoria Acadêmica</title>
-    <!-- Importa a biblioteca oficial e correta do Supabase -->
-    <script src="https://jsdelivr.net"></script>
+    <title>Área do Aluno | GAB Assessoria</title>
     <style>
-        :root {
-            --azul: #073763;
-            --azul2: #1262a3;
-            --dourado: #e8b64c;
-            --claro: #eef6fd;
-            --texto: #16324f;
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #333;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
         }
-        * { box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body { font-family: Arial, sans-serif; margin: 0; background-color: var(--claro); color: var(--texto); padding-bottom: 50px; }
-        header { background: var(--azul); color: white; paddin…
-[10:51, 16/10/2026] Gab Apoio Acadêmico: <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gab Assessoria Acadêmica</title>
-    <!-- Importa a biblioteca oficial do Supabase -->
-    <script src="https://jsdelivr.net"></script>
-    <style>
-        :root {
-            --azul: #073763;
-            --azul2: #1262a3;
-            --dourado: #e8b64c;
-            --claro: #eef6fd;
-            --texto: #16324f;
+        .form-container {
+            background: white;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 450px;
         }
-        * { box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body { font-family: Arial, sans-serif; margin: 0; background-color: var(--claro); color: var(--texto); padding-bottom: 50px; }
-        header { background: var(--azul); color: white; padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        .logo { font-size: 24px; font-weight: bold; }
-        .logo span { color: var(--dourado); }
-        .container { max-width: 900px; margin: 30px auto; padding: 0 20px; }
-        .box { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 30px; }
-        .hidden { display: none; }
-        input { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 6px; font-size: 15px; }
-        button { background-color: var(--azul2); color: white; border: none; padding: 12px 20px; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 15px; transition: 0.3s; }
-        button:hover { background-color: var(--azul); }
-        .btn-whatsapp { background-color: #25D366; }
-        .btn-whatsapp:hover { background-color: #128C7E; }
-        .item-trabalho { border-bottom: 1px solid #eef2f5; padding: 20px 0; display: flex; justify-content: space-between; align-items: center; }
-        .item-trabalho:last-child { border: none; }
-        .preco { font-size: 20px; font-weight: bold; color: var(--azul); margin-right: 15px; }
+        h2 {
+            margin-top: 0;
+            color: #1e3c72;
+            text-align: center;
+            font-size: 24px;
+        }
+        p {
+            text-align: center;
+            color: #666;
+            margin-bottom: 25px;
+            font-size: 14px;
+        }
+        label {
+            font-weight: 600;
+            color: #444;
+            display: block;
+            margin-bottom: 6px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+            box-sizing: border-box;
+            font-family: inherit;
+        }
+        input:focus, textarea:focus {
+            border-color: #2a5298;
+            outline: none;
+            box-shadow: 0 0 5px rgba(42, 82, 152, 0.3);
+        }
+        textarea {
+            resize: vertical;
+            height: 120px;
+        }
+        button {
+            width: 100%;
+            background: #1e3c72;
+            color: white;
+            border: none;
+            padding: 14px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #2a5298;
+        }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="logo">Gab Assessoria <span>Acadêmica</span></div>
-    </header>
-
-    <div class="container">
-        <div id="tela-autenticacao" class="box">
-            <h2>Área de Acesso do Aluno</h2>
-            <p>Cadastre-se ou faça login para gerenciar seus pedidos.</p>
+    <div class="form-container">
+        <h2>GAB Assessoria</h2>
+        <p>Preencha os dados abaixo para enviar o seu pedido.</p>
+        
+        <!-- Altere o código abaixo substituindo pelo seu link do Formspree após a ativação -->
+        <form action="https://formspree.io" method="POST">
             
-            <input type="email" id="auth-email" placeholder="Seu E-mail">
-            <input type="password" id="auth-senha" placeholder="Sua Senha">
-            
-            <div id="campos-cadastro">
-                <input type="text" id="aluno-nome" placeholder="Seu Nome Completo">
-                <input type="text" id="aluno-whatsapp" placeholder="Seu WhatsApp com DDD (Ex: 11999999999)">
-            </div>
+            <label for="nome">Nome Completo:</label>
+            <input type="text" id="nome" name="Nome Completo" placeholder="Digite seu nome" required>
 
-            <button onclick="realizarCadastro()" class="btn-whatsapp" id="btn-cadastrar">Criar Conta e Entrar</button>
-            <button onclick="realizarLogin()">Apenas Fazer Login</button>
-        </div>
+            <label for="whatsapp">WhatsApp com DDD:</label>
+            <input type="tel" id="whatsapp" name="WhatsApp" placeholder="(00) 00000-0000" required>
 
-        <div id="ambiente-aluno" class="box hidden">
-            <h2>Bem-vindo(a), <span id="nome-exibicao">Aluno</span>!</h2>
-            <button onclick="deslogar()" style="background-color: #dc3545; padding: 6px 12px; font-size: 13px;">Sair da Conta</button>
-            
-            <hr style="margin: 25px 0; border: 0; border-top: 1px solid #eee;">
+            <label for="pedido">Seu Pedido (Mensagem):</label>
+            <textarea id="pedido" name="Detalhes do Pedido" placeholder="Descreva aqui o suporte ou serviço que você precisa..." required></textarea>
 
-            <h3>Trabalhos Acadêmicos e Projetos Disponíveis</h3>
-            <p>Selecione o serviço desejado. Nossa equipe entrará em contato via WhatsApp imediatamente para combinar os detalhes.</p>
-            <div id="lista-trabalhos">Carregando serviços e preços...</div>
-        </div>
+            <button type="submit">Enviar Pedido</button>
+        </form>
     </div>
 
-    <script>
-        const SUPABASE_URL = "https://supabase.co"; 
-        const SUPABASE_KEY = "sb_publishable_cS1Iw3AQSE6gkyCA-9Dfjg_E90os75M"; 
-
-        const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
-        let usuarioLogadoId = null;
-
-        async function realizarCadastro() {
-            try {
-                const email = document.getElementById('auth-email').value;
-                const password = document.getElementById('auth-senha').value;
-                const nome = document.getElementById('aluno-nome').value;
-                const whatsapp = document.getElementById('aluno-whatsapp').value;
-
-                if(!email || !password || !nome || !whatsapp) { alert("Preencha todos os campos para o cadastro!"); return; }
-
-                const { data: authData, error: authError } = await supabase.auth.signUp({ email, password });
-                if (authError) { alert("Erro ao criar conta: " + authError.message); return; }
-
-                if(authData.user) {
-                    const { error: perfilError } = await supabase.from('alunos').insert([
-                        { id: authData.user.id, nome: nome, email: email, whatsapp: whatsapp }
-                    ]);
-                    if (perfilError) { console.error(perfilError); }
-                    verificarSessao();
-                }
-            } catch(e) {
-                console.error(e);
-            }
-        }
-
-        async function realizarLogin() {
-            const email = document.getElementById('auth-email').value;
-            const password = document.getElementById('auth-senha').value;
-            const { data, error } = await supabase.auth.signInWithPassword({ email, password });
-            if (error) { alert("Erro ao entrar: " + error.message); return; }
-            verificarSessao();
-        }
-
-        async function verificarSessao() {
-            const { data: { session } } = await supabase.auth.getSession();
-            if (session) {
-                usuarioLogadoId = session.user.id;
-                document.getElementById('tela-autenticacao').classList.add('hidden');
-                document.getElementById('ambiente-aluno').classList.remove('hidden');
-                const { data: aluno } = await supabase.from('alunos').select('nome').eq('id', usuarioLogadoId).single();
-                if(aluno) { document.getElementById('nome-exibicao').innerText = aluno.nome; }
-                carregarServicos();
-            } else {
-                document.getElementById('tela-autenticacao').classList.remove('hidden');
-                document.getElementById('ambiente-aluno').classList.add('hidden');
-            }
-        }
-
-        async function carregarServicos() {
-            const { data: temas, error = null } = await supabase.from('temas_disponiveis').select('*').eq('status', 'Disponível');
-            if (error) { document.getElementById('lista-trabalhos').innerText = "Erro ao carregar serviços."; return; }
-
-            let html = "";
-            temas.forEach(item => {
-                html += `
-                    <div class="item-trabalho">
-                        <div>
-                            <strong>${item.titulo}</strong> <span style="color:#666; font-size:13px;">(${item.instituicao})</span><br>
-                            <span style="font-size: 14px; color: var(--azul2);">Categoria: ${item.categoria}</span>
-                        </div>
-                        <div style="display: flex; align-items: center;">
-                            <span class="preco">R$ ${item.valor}</span>
-                            <button onclick="solicitarTrabalho('${item.id}', '${item.titulo}')">Fazer Pedido</button>
-                        </div>
-                    </div>
-                `;
-            });
-            document.getElementById('lista-trabalhos').innerHTML = html || "<p>Nenhum serviço disponível no momento.</p>";
-        }
-
-        async function solicitarTrabalho(temaId, tituloTema) {
-            const { error } = await supabase.from('pedidos').insert([
-                { aluno_id: usuarioLogadoId, tema_id: temaId, status_pedido: 'Pendente' }
-            ]);
-            if (error) {
-                alert("Erro ao enviar pedido: " + error.message);
-            } else {
-                alert(Sucesso! Seu pedido para "${tituloTema}" foi enviado. Entraremos em contato pelo seu WhatsApp cadastrado em breve!);
-            }
-        }
-
-        async function deslogar() {
-            await supabase.auth.signOut();
-            verificarSessao();
-        }
-
-        verificarSessao();
-    </script>
 </body>
 </html>
