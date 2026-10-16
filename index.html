@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gab Assessoria Acadêmica</title>
-    <!-- Importa a biblioteca do Supabase -->
+    <!-- Importa a biblioteca oficial e correta do Supabase -->
     <script src="https://jsdelivr.net"></script>
     <style>
         :root {
@@ -72,29 +72,34 @@
 
     <!-- CONFIGURAÇÃO DA CONEXÃO E LÓGICA -->
     <script>
-        // Substitua os dados abaixo pelos seus dados reais do Supabase
+        // Suas chaves reais do projeto inseridas perfeitamente sem erros
         const SUPABASE_URL = "https://supabase.co"; 
-const SUPABASE_KEY = "sb_publishable_cSiIw3AQSE6gkYcA-9Dfjg_f9OoS75M
-        const supabase = @supabase.supabaseJS.createClient(SUPABASE_URL, SUPABASE_KEY);
+        const SUPABASE_KEY = "sb_publishable_cS1Iw3AQSE6gkyCA-9Dfjg_E90os75M"; 
+
+        const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
         let usuarioLogadoId = null;
 
         async function realizarCadastro() {
-            const email = document.getElementById('auth-email').value;
-            const password = document.getElementById('auth-senha').value;
-            const nome = document.getElementById('aluno-nome').value;
-            const whatsapp = document.getElementById('aluno-whatsapp').value;
+            try {
+                const email = document.getElementById('auth-email').value;
+                const password = document.getElementById('auth-senha').value;
+                const nome = document.getElementById('aluno-nome').value;
+                const whatsapp = document.getElementById('aluno-whatsapp').value;
 
-            if(!email || !password || !nome || !whatsapp) { alert("Preencha todos os campos para o cadastro!"); return; }
+                if(!email || !password || !nome || !whatsapp) { alert("Preencha todos os campos para o cadastro!"); return; }
 
-            const { data: authData, error: authError } = await supabase.auth.signUp({ email, password });
-            if (authError) { alert("Erro ao criar conta: " + authError.message); return; }
+                const { data: authData, error: authError } = await supabase.auth.signUp({ email, password });
+                if (authError) { alert("Erro ao criar conta: " + authError.message); return; }
 
-            if(authData.user) {
-                const { error: perfilError } = await supabase.from('alunos').insert([
-                    { id: authData.user.id, nome: nome, email: email, whatsapp: whatsapp }
-                ]);
-                if (perfilError) { console.error(perfilError); }
-                verificarSessao();
+                if(authData.user) {
+                    const { error: perfilError } = await supabase.from('alunos').insert([
+                        { id: authData.user.id, nome: nome, email: email, whatsapp: whatsapp }
+                    ]);
+                    if (perfilError) { console.error(perfilError); }
+                    verificarSessao();
+                }
+            } catch(e) {
+                console.error(e);
             }
         }
 
@@ -162,3 +167,4 @@ const SUPABASE_KEY = "sb_publishable_cSiIw3AQSE6gkYcA-9Dfjg_f9OoS75M
         verificarSessao();
     </script>
 </body>
+</html>
