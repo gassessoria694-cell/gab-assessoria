@@ -1,10 +1,30 @@
-<!DOCTYPE html>
+[10:48, 16/10/2026] Gab Apoio Acadêmico: <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gab Assessoria Acadêmica</title>
     <!-- Importa a biblioteca oficial e correta do Supabase -->
+    <script src="https://jsdelivr.net"></script>
+    <style>
+        :root {
+            --azul: #073763;
+            --azul2: #1262a3;
+            --dourado: #e8b64c;
+            --claro: #eef6fd;
+            --texto: #16324f;
+        }
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: Arial, sans-serif; margin: 0; background-color: var(--claro); color: var(--texto); padding-bottom: 50px; }
+        header { background: var(--azul); color: white; paddin…
+[10:51, 16/10/2026] Gab Apoio Acadêmico: <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gab Assessoria Acadêmica</title>
+    <!-- Importa a biblioteca oficial do Supabase -->
     <script src="https://jsdelivr.net"></script>
     <style>
         :root {
@@ -40,7 +60,6 @@
     </header>
 
     <div class="container">
-        <!-- TELA 1: CADASTRO E LOGIN DO ALUNO -->
         <div id="tela-autenticacao" class="box">
             <h2>Área de Acesso do Aluno</h2>
             <p>Cadastre-se ou faça login para gerenciar seus pedidos.</p>
@@ -57,7 +76,6 @@
             <button onclick="realizarLogin()">Apenas Fazer Login</button>
         </div>
 
-        <!-- TELA 2: AMBIENTE LOGADO (FAZER PEDIDOS) -->
         <div id="ambiente-aluno" class="box hidden">
             <h2>Bem-vindo(a), <span id="nome-exibicao">Aluno</span>!</h2>
             <button onclick="deslogar()" style="background-color: #dc3545; padding: 6px 12px; font-size: 13px;">Sair da Conta</button>
@@ -70,9 +88,7 @@
         </div>
     </div>
 
-    <!-- CONFIGURAÇÃO DA CONEXÃO E LÓGICA -->
     <script>
-        // Suas chaves reais do projeto inseridas perfeitamente sem erros
         const SUPABASE_URL = "https://supabase.co"; 
         const SUPABASE_KEY = "sb_publishable_cS1Iw3AQSE6gkyCA-9Dfjg_E90os75M"; 
 
@@ -127,7 +143,7 @@
         }
 
         async function carregarServicos() {
-            const { data: temas, error } = await supabase.from('temas_disponiveis').select('*').eq('status', 'Disponível');
+            const { data: temas, error = null } = await supabase.from('temas_disponiveis').select('*').eq('status', 'Disponível');
             if (error) { document.getElementById('lista-trabalhos').innerText = "Erro ao carregar serviços."; return; }
 
             let html = "";
